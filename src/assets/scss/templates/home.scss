@@ -1,0 +1,17 @@
+.animatedText{
+    transform: translateY(180px) rotate(15deg);
+    -webkit-transform: translateY(180px) rotate(15deg);
+    transform-origin: center;
+    transition: all 1s cubic-bezier(0.75, 0, 0.125, 1);
+    -webkit-transition: all 1s cubic-bezier(0.75, 0, 0.125, 1);
+    will-change: transform;
+    opacity: 0;
+}
+.animatedText.show{
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    opacity: 1;
+}
+p.animatedText{
+    transition-delay: 0.8s;
+}

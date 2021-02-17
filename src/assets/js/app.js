@@ -8,4 +8,11 @@ import Foundation from 'foundation-sites';
 // the line below
 //import './lib/foundation-explicit-pieces';
 
+import './home';
+import './about';
+import './services';
+import './contact-us';
+import './faqs';
+import './general';
+
 $(document).foundation();

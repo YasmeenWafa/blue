@@ -45,6 +45,10 @@
 					<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 				<?php endif; ?>
 			</div>
+			<div class="top-bar-end">
+				<?php do_action('wpml_add_language_selector');?>
+			</div>
+			
 		</nav>
 
 	</header>

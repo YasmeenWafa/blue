@@ -26,3 +26,26 @@
 .nav-next {
   float:right;
 }
+
+.top-bar{
+  background-color: transparent;
+  @media (max-width:1024px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.top-bar ul{
+  background-color: transparent;
+}
+.top-bar .top-bar-left, .top-bar .top-bar-right{
+  margin: 0;
+  flex: unset;
+}
+
+.wpml-ls ul li:first-of-type:not(:last-of-type){
+  border-right: 2px solid;
+}
+.rtl .wpml-ls ul li:first-of-type:not(:last-of-type){
+  border-right: none;
+  border-left: 2px solid;
+}
