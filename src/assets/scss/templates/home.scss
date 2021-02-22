@@ -1,17 +1,91 @@
-.animatedText{
-    transform: translateY(180px) rotate(15deg);
-    -webkit-transform: translateY(180px) rotate(15deg);
-    transform-origin: center;
-    transition: all 1s cubic-bezier(0.75, 0, 0.125, 1);
-    -webkit-transition: all 1s cubic-bezier(0.75, 0, 0.125, 1);
-    will-change: transform;
-    opacity: 0;
+.banner{
+    position: relative;
 }
-.animatedText.show{
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-    opacity: 1;
-}
-p.animatedText{
-    transition-delay: 0.8s;
+.banner-slider{
+    position: relative;
+    .banner-slide{
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding-left: 200px;
+        padding-right: 0;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        @media (max-width: 40em) {
+            padding: 40px;
+        }
+    }
+    .banner-slide-text{
+        max-width: 400px;
+        color: white;
+        @media (max-width: 40em) {
+            max-width: unset;
+        }
+        & .banner-title{
+            font-size: 72px;
+            line-height: 80px;
+            letter-spacing: 2px;
+            @media (max-width: 40em) {
+                font-size: 48px;
+                line-height: 50px;
+            }
+        }
+        & .banner-subtitle{
+            font-size: 24px;
+            line-height: 40px;
+            letter-spacing: 2px;
+            margin-bottom: 35px;
+            @media (max-width: 40em) {
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+        .cta-button{
+            color: white;
+        }
+    }
+    .slick-dots{
+        position: absolute;
+        bottom: 50px;
+        left: 190px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: 40em) {
+            left: 0;
+            right: 0;
+            justify-content: center;
+        }
+        & li{
+            // font-size: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 5px;
+            border: 1px solid #fff;
+            color: white;
+            align-self: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            &.slick-active{
+                & button{
+                    background-color: white;
+                }
+            }
+        }
+        & button{
+            cursor: pointer;
+            font-size: 0;
+            color: white;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: 0 0;
+            transition: background-color 0.3s linear;
+        }
+    }
 }

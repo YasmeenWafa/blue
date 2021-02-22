@@ -53,6 +53,9 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+@import "../../../node_modules/slick-carousel/slick/slick.scss";
+
+
 /*
   My custom styles:
   Add your scss files below to structure your project styles
@@ -64,6 +67,8 @@
 @import "global/wp-admin";
 @import "global/wp-overrides";
 @import "global/gutenberg";
+@import "global/global";
+
 
 // Modules
 @import "modules/navigation";
@@ -83,6 +88,8 @@
 @import "templates/kitchen-sink";
 
 @import "templates/home";
+@import "templates/home-rtl";
+
 @import "templates/about";
 @import "templates/services";
 @import "templates/contact-us";

@@ -1,0 +1,116 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    background-color: $white2;
+    position: relative;
+}
+
+h1{
+    font-weight: 700;  //Bold
+}
+h2,h3{
+    font-weight: 600; //Semi Bold
+}
+h4, h5, h6{
+    font-weight: 500; // Medium
+}
+
+a, p{
+    font-weight: 300; //light
+}
+
+.title{
+    font-weight: 700; // Bold
+}
+.title-2{
+    font-weight: 600; // Semi Bold
+}
+.subtitle{
+    font-weight: 500;  //Medium
+}
+.cta{
+    font-weight: 400; // Regular
+}
+.txt{
+    font-weight: 400;  // Regular
+}
+.txt-light{
+    font-weight: 300; // Light
+}
+
+
+
+.animatedText{
+    transform: translateY(180px) rotate(15deg);
+    -webkit-transform: translateY(180px) rotate(15deg);
+    transform-origin: center;
+    transition: all 1s cubic-bezier(0.75, 0, 0.125, 1);
+    -webkit-transition: all 1s cubic-bezier(0.75, 0, 0.125, 1);
+    will-change: transform;
+    opacity: 0;
+}
+.animatedText.show{
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    opacity: 1;
+}
+p.animatedText{
+    transition-delay: 0.8s;
+}
+
+
+.cta-button{
+    border: 2px solid;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+
+//////// scroll button css and animation ///////////
+.scroll-down{
+    bottom: 5%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    left: 0px;
+    color: white;
+    & a{
+        transform: rotate(-90deg);
+        color: white;
+    }
+    
+    .c-scrolldown {
+        width: 1px;
+        height: 60px;
+        margin: 0 auto;
+        margin-top: 50px;
+        overflow: hidden;
+        
+        .c-line {
+            width: 100%;
+            height: 100%;
+            display: block;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 50%);
+            background-position: 0 -60px;
+            background-size: 100% 200%;
+            animation: scrolldown 2.2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+        }
+    }
+}
+
+@keyframes scrolldown {
+	0%{
+		background-position: 0 -60px;
+	}
+	75% {
+		background-position: 0 0;
+	}
+	100%{
+		background-position: 0 60px;
+	}
+}
+//////// scroll button css and animation ///////////

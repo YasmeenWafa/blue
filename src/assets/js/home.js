@@ -1,3 +1,6 @@
+
+//////////////// text animation ///////////////
+
 $(window).scroll(function() {
  //projects_section
  var animatedText = $(".animatedText");
@@ -17,3 +20,26 @@ $(window).scroll(function() {
    
    }
 });
+//////////////// text animation ///////////////
+
+
+//////////////// banner slider ///////////////
+$('body:not(.rtl) .home-page-container .banner-slider').slick({
+  fade: true,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  speed: 1500,
+  infinite: true,
+  dots: true,
+  arrows: false
+})
+$('.rtl .home-page-container .banner-slider').slick({
+  fade: true,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  speed: 1500,
+  infinite: true,
+  dots: true,
+  arrows: false,
+  rtl: true
+})

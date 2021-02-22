@@ -63,7 +63,8 @@
     "vinyl-named": "^1.1.0",
     "webpack": "^3.10.0",
     "webpack-stream": "^4.0.0",
-    "yargs": "^3.8.0"
+    "yargs": "^3.8.0",
+    "slick-carousel": "^1.8.1"
   },
   "repository": {
     "type": "git",
