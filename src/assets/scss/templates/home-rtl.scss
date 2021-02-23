@@ -9,4 +9,68 @@
         //     right: 190px;
         // }
     }
+
+    .section {
+        .title, .title2{
+            letter-spacing: 1px;
+        }
+    }
+    
+
+    .about{
+        .about-title{
+                text-align: left;
+                & span{
+                    padding: 0;
+                    padding-right: 25px;
+                }
+        }
+    }
+    .swimming-pools{
+        .products-title{
+            text-align: left;
+            & span{
+                padding: 0;
+                padding-right: 40px;
+            }
+        }
+
+        & .title2{
+            & span{
+                padding: 0;
+                padding-left: 20px;
+            }
+        }
+        .ranges, .ranges-title{
+            letter-spacing: 0.5px;
+        }
+
+        & .swimming-pools-image{
+            text-align: left;
+        }
+    }
+    .jacuzzis{
+        & .title2{
+            text-align: left;
+            & span{
+                padding: 0;
+                padding-right: 55px;
+            }
+        }
+
+        & .jacuzzis-image{
+            text-align: right;
+        }
+    }
+    .saunas{
+        & .title2{
+            & span{
+                padding: 0;
+                padding-left: 25px;
+            }
+        }
+        & .saunas-image{
+            text-align: left;
+        }
+    }
 }

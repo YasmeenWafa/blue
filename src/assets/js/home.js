@@ -2,22 +2,31 @@
 //////////////// text animation ///////////////
 
 $(window).scroll(function() {
- //projects_section
- var animatedText = $(".animatedText");
- if(animatedText.length!=0){
-     for(let i = 0; i<animatedText.length; i++){
-        var top_of_element = animatedText[i].offsetTop;
-        var bottom_of_element = animatedText[i].offsetTop + animatedText[i].outerHeight;
-        var top_of_screen = $(window).scrollTop();
-        var bottom_of_screen = $(window).scrollTop() + window.innerHeight;
-        if((bottom_of_screen > top_of_element) && (top_of_screen < top_of_element)){
-        
-            
-        animatedText[i].classList+=" show"
 
-            } 
-     }
-   
+  var animatedText = $(".animatedText");
+  if(animatedText.length!=0){
+    animatedText.each(function(index){
+       var top_of_element = $(this).offset().top;
+       var bottom_of_element = $(this).offset() + $(this).outerHeight();
+       var top_of_screen = $(window).scrollTop();
+       var bottom_of_screen = $(window).scrollTop() + window.innerHeight;
+       if((bottom_of_screen > top_of_element) && (top_of_screen < top_of_element)){
+           $(this).addClass("show")
+       } 
+     })
+    }
+
+   var animatedImages = $(".section-image");
+ if(animatedImages.length!=0){
+      animatedImages.each(function(index){
+      var top_of_element = $(this).offset().top;
+      var bottom_of_element = $(this).offset() + $(this).outerHeight();
+      var top_of_screen = $(window).scrollTop();
+      var bottom_of_screen = $(window).scrollTop() + window.innerHeight;
+      if((bottom_of_screen > top_of_element) && (top_of_screen < top_of_element)){
+          $(this).children().first().addClass("animateImg")
+      } 
+    })
    }
 });
 //////////////// text animation ///////////////
