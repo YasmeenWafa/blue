@@ -29,7 +29,8 @@
 
 .top-bar{
   background-color: transparent;
-  padding: 50px;
+  // padding: 50px;
+  padding: 20px 50px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -39,6 +40,10 @@
     flex-direction: column;
     align-items: flex-start;
   }
+}
+.top-bar-left .logo{
+  width: 75px;
+  height: 75px;
 }
 .top-bar ul{
   background-color: transparent;

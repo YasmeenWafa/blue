@@ -89,3 +89,159 @@
         }
     }
 }
+
+.home-page-container{
+    .section{
+        padding: 70px 100px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+       
+            & .title{
+                position: relative;
+                color: $black2;
+                letter-spacing: 6.6px;
+                font-size: 70px;
+                & span{
+                    background-color: $white2;
+                    padding-right: 10px;
+                }
+                
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: 0.5em;
+                    border-top: 2px solid;
+                    z-index: -1;
+                }
+            }
+
+            
+            & .title2{
+                font-size: 40px;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                // line-height: 100px;
+                margin-bottom: 30px;
+            }
+        .txt{
+            text-align: justify;
+            color: $black2;
+            line-height: 32px;
+            letter-spacing: 1.4px;
+            margin-bottom: 40px;
+        }
+        .section-content{
+            flex: 1;
+        }
+        .section-image{
+            flex: 1;
+            img{
+                // max-width: 70%;
+                max-width: 60%;
+            }
+        }
+    }
+
+
+    .about{
+        .about-title{
+            
+                text-align: right;
+                & span{
+                    padding: 0;
+                    padding-left: 25px;
+                }
+        }
+        .about-content{
+            flex: 1;
+            & .about-subtitle{
+                font-size: 24px;
+                color: $azure;
+                letter-spacing: 0.5px;
+            }
+            .cta-button{
+                color: $azure;
+            }
+        }
+    }
+
+    .swimming-pools{
+        
+        .products-title{
+            text-align: right;
+            & span{
+                padding: 0;
+                padding-left: 40px;
+            }
+        }
+        & .title2{
+            color: $lightBlue;
+            & span{
+                padding-right: 20px;
+            }
+        }
+        .ranges-title{
+            font-weight: 700;
+            color: $lightBlue;
+            letter-spacing: 1.7px;
+            line-height: 20px;
+        }
+        .ranges{
+            font-weight: 600;
+            color: $black2;
+            letter-spacing: 1.7px;
+            line-height: 20px;
+            margin-bottom: 50px;
+        }
+        .cta-button{
+            color: $lightBlue;
+        }
+        & .swimming-pools-image{
+            text-align: right;
+        }
+    }
+
+
+    .jacuzzis{
+        
+        
+        & .title2{
+            color: $azure;
+            text-align: right;
+            & span{
+                padding-left: 55px;
+            }
+        }
+        
+        .cta-button{
+            color: $azure;
+        }
+        & .jacuzzis-image{
+            text-align: left;
+        }
+    }
+
+
+    .saunas{
+        
+        
+        & .title2{
+            color: $olive;
+            & span{
+                padding-right: 25px;
+            }
+        }
+        
+        .cta-button{
+            color: $olive;
+        }
+        & .saunas-image{
+            text-align: right;
+        }
+    }
+    
+}
