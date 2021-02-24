@@ -36,6 +36,9 @@
   top: 0;
   left: 0;
   z-index: 100;
+  @media (min-width: 1024px) and (max-width: 1340px) {
+    padding: 20px 25px;
+  }
   @media (max-width:1024px) {
     flex-direction: column;
     align-items: flex-start;
@@ -44,6 +47,10 @@
 .top-bar-left .logo{
   width: 125px;
   height: 125px;
+  @media (min-width: 1024px) and (max-width: 1340px) {
+    width: 100px;
+    height: 100px;
+  }
 }
 .top-bar ul{
   background-color: transparent;
@@ -59,6 +66,9 @@
   letter-spacing: 1px;
   font-size: 15.4px;
   padding: 0.7rem 2rem;
+  @media (min-width: 1024px) and (max-width: 1340px) {
+    padding: 0.7rem 1rem;
+  }
 }
 .dropdown.menu > li.is-active > a{
   color: white;

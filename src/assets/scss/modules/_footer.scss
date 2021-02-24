@@ -33,6 +33,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  @media (min-width: 1024px) and (max-width: 1340px) {
+    padding: 50px 25px;
+    padding-top: 70px;
+  }
 }
 .footer-grid{
   display: flex;
@@ -41,7 +45,7 @@
   & .footer-start{
     // flex: 1;
     padding: 0 5px;
-    width: 20%;
+    width: 15%;
   }
   & .footer-end{
     // flex: 5;
@@ -49,7 +53,7 @@
     flex-direction: column;
     padding: 0 5px;
     // padding-left: 55px;
-    width: 80%;
+    width: 85%;
     section{
       flex: unset;
       display: inline-block;
@@ -60,6 +64,10 @@
   .logo{
     max-width: 170px;
     max-height: 170px;
+    @media (min-width: 1024px) and (max-width: 1340px) {
+      max-width: 125px;
+      max-height: 125px;
+    }
   }
 }
 
@@ -71,12 +79,19 @@
     width: auto;
     display: inline-block;
     vertical-align: top;
+    @media (min-width: 1024px) and (max-width: 1340px) {
+      max-width: 160px;
+    }
   }
   .slogan h2{
     font-size: 32px;
     letter-spacing: 0.75px;
     line-height: 48px;
     margin-bottom: 25px;
+    @media (min-width: 1024px) and (max-width: 1340px) {
+      font-size: 25px;
+      line-height: 35px;
+    }
   }
   .slogan .cta-button{
     color: black;
@@ -91,14 +106,43 @@
       letter-spacing: 1.9px;
       text-transform: uppercase;
   }
+  .menu .menu-item.menu-item-has-children {
+    max-width: unset;
+    @media (min-width: 1024px) and (max-width: 1100px) {
+      max-width: 204px;
+    }
+    @media (min-width: 1101px) and (max-width: 1250px) {
+      max-width: 230px;
+    }
+    @media (min-width: 1250px) and (max-width: 1340px) {
+      max-width: 280px;
+    }
+
+  }
+  .menu .menu-item.menu-item-has-children:nth-of-type(3) .sub-menu .menu-item a{
+    text-transform: none;
+  }
   .menu .sub-menu .menu-item a, .contact-info a{
     font-weight: 300;
     color: black;
     font-size: 16px;
     letter-spacing: 1.7px;
   }
+  // .contact-info{
+  //   margin-top: 5.5px;
+  //   @media (min-width: 1024px) and (max-width: 1340px) {
+  //     max-width: 165px;
+  //   }
+  // }
+  .menu .sub-menu .menu-item a .sm, .contact-info a .sm{
+    display: none;
+    @media (min-width: 1024px) and (max-width: 1340px) {
+      // display: inline-block;
+    }
+  }
   .contact-info{
     display: inline-block;
+    display: none;
     vertical-align: top; 
   }
   .social-media {
