@@ -183,11 +183,25 @@
 .rtl{
 
   .footer-end-upper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .slogan{
+      flex: 1;
+    }
+    section{
+      flex: 4;
+    }
+    section .menu{
+      display: flex;
+      justify-content: space-between;
+    }
     .menu .menu-item.menu-item-has-children a, .contact-info .contact-title{
       letter-spacing: 0.5px;
     }
     & .social-media{
       float: left;
+      flex: 1;
     }
     & .contact-info p:last-of-type{
       direction: ltr;
