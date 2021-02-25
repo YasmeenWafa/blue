@@ -27,6 +27,29 @@
   float:right;
 }
 
+.top-bar.scrolled{
+  background-color: $white2;
+  padding: 10px 50px;
+  transition: all 0.5s;
+  & .top-bar-left .logo{
+    width: 75px;
+    height: 75px;
+  }
+  .dropdown.menu > li > a, .dropdown.menu > li.is-active > a, .wpml-ls-item a{
+    color: $black2;
+  }
+  .wpml-ls ul li:first-of-type:not(:last-of-type){ 
+    border-right: 1px solid $black2;
+  }
+}
+.rtl .top-bar.scrolled{
+  .wpml-ls ul li:first-of-type:not(:last-of-type){
+    border-right: none;
+    border-left: 1px solid $black2;
+
+  }
+}
+
 .top-bar{
   background-color: transparent;
   // padding: 50px;
@@ -47,6 +70,7 @@
 .top-bar-left .logo{
   width: 125px;
   height: 125px;
+  transition: all 0.5s;
   @media (min-width: 1024px) and (max-width: 1340px) {
     width: 100px;
     height: 100px;

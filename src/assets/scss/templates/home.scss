@@ -271,3 +271,42 @@
     }
     
 }
+
+
+// .gallery-slider{
+//     position: relative;
+//     height: 100vh;
+//     & .gallery-slide{
+//         position: absolute;
+//         top: 0;
+//         left: 100px;
+//         & img{
+//             transition: opacity 0.3s;
+//         }
+//     }
+//     & .gallery-slide.active{
+//         transform: rotate(0deg);
+//         & img{
+//             opacity: 0;
+//         }
+//     }
+   
+//     & .gallery-slide:nth-child(odd){
+//         z-index: 1;
+//         img{
+//             transform: rotate(15deg);
+//         }
+//     }
+//     & .gallery-slide:nth-child(even){
+//         z-index: 2;
+//         img{
+//             transform: rotate(-15deg);
+//         }
+//     }
+//     & .gallery-slide:nth-child(1){
+//         z-index: 3;
+//         img{
+//             transform: rotate(0);
+//         }
+//     }
+// }

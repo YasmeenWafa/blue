@@ -134,6 +134,20 @@ get_header(); ?>
             </div>
     </section>
 
+    <!-- <section class="gallery-slider">
+            
+            
+            <div class="gallery-slide">
+                <img src="<?php the_field('jacuzzis_image')?>" alt="">
+            </div>
+            <div class="gallery-slide">
+                <img src="<?php the_field('saunas_image')?>" alt="">
+            </div>
+            <div class="gallery-slide">
+                <img src="<?php the_field('swimming_pools_image')?>" alt="">
+            </div>
+    </section> -->
+
 </div>
 
 <?php get_footer();

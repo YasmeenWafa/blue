@@ -1,7 +1,7 @@
 
 //////////////// text animation ///////////////
 
-$(window).scroll(function() {
+$(window).on('scroll',function() {
 
   var animatedText = $(".animatedText");
   if(animatedText.length!=0){
@@ -52,3 +52,14 @@ $('.rtl .home-page-container .banner-slider').slick({
   arrows: false,
   rtl: true
 })
+
+
+
+// $('.gallery-slider').on('click', function(){
+//   let gallery_slides = $('.gallery-slide:not(.active)').length();
+//   console.log(gallery_slides)
+//   gallery_slides[0].classList+= " active"
+// //  gallery_slides.children().first().addClass('active');
+//  gallery_slides.shift()
+// console.log(gallery_slides)
+// })
