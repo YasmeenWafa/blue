@@ -21,19 +21,36 @@ register_nav_menus(
  * @link http://codex.wordpress.org/Function_Reference/wp_nav_menu
  */
 if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
-	function foundationpress_top_bar_r() {
-		wp_nav_menu(
-			array(
-				'container'      => false,
-				'menu_class'     => 'dropdown menu desktop-menu',
-				'items_wrap'     => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
-				'theme_location' => 'top-bar-r',
-				'depth'          => 3,
-				'fallback_cb'    => false,
-				'walker'         => new Foundationpress_Top_Bar_Walker(),
-			)
-		);
-	}
+	// if(wp_is_mobile(  )){
+	// 	function foundationpress_top_bar_r() {
+	// 		wp_nav_menu(
+	// 			array(
+	// 				'container'      => false,
+	// 				'menu_class'     => 'vertical menu accordion-menu',
+	// 				'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu data-multi-open="false" data-submenu-toggle>%3$s</ul>',
+	// 				'theme_location' => 'top-bar-r',
+	// 				'depth'          => 3,
+	// 				'fallback_cb'    => false,
+	// 				'walker'         => new Foundationpress_Top_Bar_Walker(),
+	// 			)
+	// 		);
+	// 	}
+	// }else{
+		function foundationpress_top_bar_r() {
+			wp_nav_menu(
+				array(
+					'container'      => false,
+					'menu_class'     => 'dropdown menu desktop-menu',
+					'items_wrap'     => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
+					'theme_location' => 'top-bar-r',
+					'depth'          => 3,
+					'fallback_cb'    => false,
+					'walker'         => new Foundationpress_Top_Bar_Walker(),
+				)
+			);
+		}
+	// }
+	
 }
 
 
@@ -46,9 +63,9 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 			array(
 				'container'      => false,                         // Remove nav container
 				'menu'           => __( 'mobile-nav', 'foundationpress' ),
-				'menu_class'     => 'vertical menu',
+				'menu_class'     => 'vertical menu accordion-menu',
 				'theme_location' => 'mobile-nav',
-				'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu data-submenu-toggle="true">%3$s</ul>',
+				'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu data-multi-open="true" data-submenu-toggle>%3$s</ul>',
 				'fallback_cb'    => false,
 				'walker'         => new Foundationpress_Mobile_Walker(),
 			)

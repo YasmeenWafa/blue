@@ -27,6 +27,7 @@
   float:right;
 }
 
+
 .top-bar.scrolled{
   background-color: $white2;
   padding: 10px 50px;
@@ -36,7 +37,7 @@
     width: 75px;
     height: 75px;
   }
-  .dropdown.menu > li > a, .dropdown.menu > li.is-active > a, .wpml-ls-item a{
+  .menu > li > a, .dropdown.menu > li.current-menu-item > a, .dropdown.menu > li.is-active, .wpml-ls-item a{
     color: $black2;
   }
   .wpml-ls ul li:first-of-type:not(:last-of-type){ 
@@ -64,7 +65,7 @@
   @media (min-width: 1024px) and (max-width: 1340px) {
     padding: 20px 25px;
   }
-  @media (max-width:1024px) {
+  @media (max-width:1023px) {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -85,7 +86,7 @@
   margin: 0;
   flex: unset;
 }
-.dropdown.menu > li > a{
+.menu > li.menu-item > a{
   font-weight: 400;
   color: white;
   text-transform: uppercase;
@@ -95,18 +96,46 @@
   @media (min-width: 1024px) and (max-width: 1340px) {
     padding: 0.7rem 1rem;
   }
+  @media (max-width: 1023px) {
+    color: $black3;
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: 0.9px;
+    text-transform: none;
+    margin: 16px 0;
+  }
 }
-.dropdown.menu > li.is-active > a{
+.menu > li.menu-item.current-menu-item > a{
   color: white;
   font-weight: 700;
+  @media (max-width: 1023px) {
+    color: $lightBlue;
+    font-weight: 600;
+  }
+}
+
+.menu > li.is-dropdown-submenu-parent.is-active a {
+  color: $white2;
+}
+.is-dropdown-submenu{
+  display: none !important;
+}
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after{
+  display: none;
 }
 
 .wpml-ls ul li:first-of-type:not(:last-of-type){
   border-right: 1px solid white;
+  @media (max-width: 1023px) {
+    border-color: $black3;
+  }
 }
 .rtl .wpml-ls ul li:first-of-type:not(:last-of-type){
   border-right: none;
   border-left: 1px solid white;
+  @media (max-width: 1023px) {
+    border-color: $black3;
+  }
 }
 
 .wpml-ls-item a{
@@ -115,7 +144,222 @@
   letter-spacing: 1.7px;
   text-transform: uppercase;
   padding: 0 10px;
+  @media (max-width: 1023px) {
+    color: $dark-gray2;
+  }
 }
 .wpml-ls-item.wpml-ls-current-language a{
   font-weight: 700;
+  @media (max-width: 1023px) {
+    color: $black2;
+  }
+}
+
+
+.desktop-menu{
+  @media (max-width: 1023px) {
+    display: block !important;
+  }
+}
+
+.site-header{
+  @media (max-width: 1023px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+  }
+}
+.title-bar{
+    padding: 24px;
+    background-color: transparent;
+    transition: all 0.5s;
+
+  .logo{
+    width: 80px;
+    height: 80px;
+  }
+  .title-bar-left{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  .menu-icon{
+      height: 42px;
+      width: 42px;
+      border: 2px solid white;
+      transition: all 0.5s;
+    & svg path{
+      transition: all 0.5s;
+    }
+  }
+  .menu-icon::after{
+      content: none;
+  }
+}
+
+.title-bar.scrolled{
+  background-color: $white2;
+  box-shadow: 0px 0px 21px 0px #0000004d;
+  transition: all 0.5s;
+  .menu-icon{
+    border-color: black;
+    & svg path{
+      fill: black;
+    }
+  }
+}
+
+
+.accordion-menu .is-accordion-submenu-parent[aria-expanded='true'] > a::after{
+  transform: rotate(-45deg) !important;
+}
+.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after{
+  border: none;
+  border-style: solid;
+  border-width: 2px 2px 0 0;
+  content: '';
+  display: inline-block;
+  height: 18px;
+  transform: rotate(-225deg);
+  vertical-align: top;
+  width: 18px;
+  transition: all 0.5s;
+}
+
+#menuModal{
+
+  padding: 24px;
+  background-color: $white2;
+  top: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 65%;
+  float: right;
+  @media (max-width: 40em) {
+    width: 100%;
+    float: none;
+  }
+
+  .menu-upper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo{
+      width: 80px;
+      height: 80px;
+    }
+    .close-button{
+      position: static;
+      border: 2px solid $lightBlue;
+      width: 42px;
+      height: 42px;
+      span{
+        color: $lightBlue;
+        font-size: 42px;
+      }
+    }
+  }
+  .menu-center{
+    margin: 10px 0;
+    & .menu{
+      .menu-item a{
+        padding: 0rem 1rem;
+      }
+      .menu-item.is-active a{
+        background-color: transparent;
+      }
+      .is-accordion-submenu{
+        width: 60%;
+        width: fit-content;
+      }
+      .menu-item.is-accordion-submenu-item.is-active {
+        position: relative;
+        text-align: right;
+        &::after{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 14px;
+          border-top: 2px solid $lightBlue;
+          z-index: -1;
+          margin-left: 1rem;
+        }
+      }
+      .menu-item.is-accordion-submenu-item a{
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.44px;
+        margin: 8px 0;
+      }
+      .menu-item.is-accordion-submenu-item.is-active a{
+        background-color: $white2;
+        display: inline-block;
+        font-weight: 500;
+      }
+      
+      
+
+      & .child{
+        // position: relative;
+        // display: inline-block;
+      }
+      .child:not(:last-child){
+        margin-top: 48px;
+      }
+      & .child:not(:last-child) a::before{
+        width: 75%;
+        height: 2px;
+        background-color: #818181;
+        content: " ";
+        position: absolute;
+        top: 0;
+      }
+      .child:not(:last-child) a{
+          padding-top: 1.5rem;
+      }
+      
+      & .child a{
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        color: $dark-gray;
+        // margin: 12px 0;
+        margin: 0;
+        position: relative;
+        padding: 0.7rem 1rem;
+        display: inline-block;
+      }
+    }
+  }
+  .menu-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .social-media{
+      & a{
+        color: black;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.rtl {
+  .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after{
+    left: 1rem;
+    right: unset;
+  }
+  #menuModal {
+    .social-media{
+      @media (max-width: 1023px) {
+        direction: ltr;
+      }
+    }
+  }
+    
 }

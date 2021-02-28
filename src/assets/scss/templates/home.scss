@@ -3,6 +3,9 @@
 }
 .banner-slider{
     position: relative;
+    @media (max-width: 1024px) {
+        // display: none;
+    }
     .banner-slide{
         height: 100vh;
         background-repeat: no-repeat;
@@ -108,7 +111,9 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-       
+        @media (max-width: 1024px) {
+            display: none;
+        }
             & .title{
                 position: relative;
                 color: $black2;
