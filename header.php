@@ -81,9 +81,9 @@
 		</div>
 		<div class="menu-footer">
 			<div class="social-media">
-				<a href=""><i class="icon-facebook"></i></a>
-				<a href=""><i class="icon-instagram"></i></a>
-				<a href=""><i class="icon-youtube-play"></i></a>
+				<a href="<?php the_field('facebook_link', 10)?>" target="_blank"><i class="icon-facebook"></i></a>
+				<a href="<?php the_field('instagram_link', 10)?>" target="_blank"><i class="icon-instagram"></i></a>
+				<a href="<?php the_field('youtube_link', 10)?>" target="_blank"><i class="icon-youtube-play"></i></a>
 			</div>
 			<?php do_action('wpml_add_language_selector');?>
 		</div>

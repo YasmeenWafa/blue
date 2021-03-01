@@ -179,6 +179,7 @@
   .logo{
     width: 80px;
     height: 80px;
+    transition: all 0.5s;
   }
   .title-bar-left{
       display: flex;
@@ -202,12 +203,17 @@
 .title-bar.scrolled{
   background-color: $white2;
   box-shadow: 0px 0px 21px 0px #0000004d;
+  padding: 15px;
   transition: all 0.5s;
   .menu-icon{
     border-color: black;
     & svg path{
-      fill: black;
+      fill: black
     }
+  }
+  .logo{
+    width: 65px;
+    height: 65px;
   }
 }
 
@@ -226,6 +232,10 @@
   vertical-align: top;
   width: 18px;
   transition: all 0.5s;
+}
+
+.reveal-overlay{
+  display: none;
 }
 
 #menuModal{
@@ -309,7 +319,7 @@
         // display: inline-block;
       }
       .child:not(:last-child){
-        margin-top: 48px;
+        margin-top: 30px;
       }
       & .child:not(:last-child) a::before{
         width: 75%;
@@ -333,6 +343,10 @@
         position: relative;
         padding: 0.7rem 1rem;
         display: inline-block;
+      }
+      & .child.is-active a{
+        font-weight: 600;
+        color: $lightBlue;
       }
     }
   }

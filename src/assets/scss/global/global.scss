@@ -43,6 +43,37 @@ a, p{
 }
 
 
+.mobile{
+    display: none;
+    @media (max-width: 1023px) {
+        display: block;
+    }
+}
+.desktop{
+    display: block;
+    @media (max-width: 1023px) {
+        display: none;
+    }
+}
+
+
+body:not(.page-template-home){
+    .top-bar .top-bar-right .menu-item a{
+        color: $black2;
+    }
+    .top-bar .top-bar-end .wpml-ls-item a{
+        color: $black2;
+    }
+    .title-bar{
+        .menu-icon{
+            border-color: black;
+            & svg path{
+              fill: black
+            }
+        }
+    }
+    
+}
 
 .animatedText{
     // transform: translateY(180px) rotate(15deg);
@@ -89,6 +120,10 @@ a, p{
     flex-direction: column;
     left: 0px;
     color: white;
+    @media (max-width: 1023px) {
+        left: unset;
+        right: 0;
+    }
     & a{
         transform: rotate(-90deg);
         color: white;

@@ -3,7 +3,7 @@
 }
 .banner-slider{
     position: relative;
-    @media (max-width: 1024px) {
+    @media (max-width: 1023px) {
         // display: none;
     }
     .banner-slide{
@@ -17,8 +17,8 @@
         flex-direction: column;
         justify-content: center;
         position: relative;
-        @media (max-width: 40em) {
-            padding: 40px;
+        @media (max-width: 1023px) {
+            padding: 48px;
         }
     }
     .banner-slide-overlay{
@@ -28,23 +28,29 @@
         width: 100%;
         left: 0;
         background: linear-gradient(to bottom, #00102da3, #00102d00);
+        mix-blend-mode: multiply;
         z-index: 1;
+        @media (max-width: 1023px) {
+            background: linear-gradient(to bottom, rgba(0, 16, 45, 0.56) 17%, rgba(0, 16, 45, 0) 136%);
+            height: 100%;
+        }
     }
     .banner-slide-text{
         max-width: 400px;
         color: white;
         position: relative;
         z-index: 2;
-        @media (max-width: 40em) {
+        @media (max-width: 1023px) {
             max-width: unset;
         }
         & .banner-title{
             font-size: 72px;
             line-height: 80px;
             letter-spacing: 2px;
-            @media (max-width: 40em) {
-                font-size: 48px;
-                line-height: 50px;
+            @media (max-width: 1023px) {
+                font-size: 40px;
+                line-height: 48px;
+                letter-spacing: 1px;
             }
         }
         & .banner-subtitle{
@@ -52,9 +58,10 @@
             line-height: 40px;
             letter-spacing: 2px;
             margin-bottom: 35px;
-            @media (max-width: 40em) {
-                font-size: 20px;
-                line-height: 30px;
+            @media (max-width: 1023px) {
+                font-size: 16px;
+                line-height: unset;
+                letter-spacing: 1.3px;
             }
         }
         .cta-button{
@@ -68,9 +75,9 @@
         list-style: none;
         display: flex;
         justify-content: space-between;
-        @media (max-width: 40em) {
-            left: 0;
-            right: 0;
+        @media (max-width: 1023px) {
+            left: 25px;
+            right: unset;
             justify-content: center;
         }
         & li{
@@ -111,14 +118,23 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        @media (max-width: 1024px) {
-            display: none;
+        @media (max-width: 1023px) {
+            // display: none;
+            padding: 16px 48px;
+            flex-direction: column;
+            align-items: unset;
+            flex-wrap: nowrap;
         }
             & .title{
                 position: relative;
                 color: $black2;
                 letter-spacing: 6.6px;
                 font-size: 70px;
+                @media (max-width: 1023px) {
+                      font-size: 18px;
+                      letter-spacing: 1.7px;
+                      width: 70%;
+                }
                 & span{
                     background-color: $white2;
                     padding-right: 10px;
@@ -141,8 +157,12 @@
                 font-size: 40px;
                 text-transform: uppercase;
                 letter-spacing: 5px;
-                // line-height: 100px;
                 margin-bottom: 30px;
+                @media (max-width: 1023px) {
+                    font-size: 16px;
+                    letter-spacing: 2.2px;
+                    margin-bottom: 16px;
+                }
             }
         .txt{
             text-align: justify;
@@ -150,18 +170,32 @@
             line-height: 32px;
             letter-spacing: 1.4px;
             margin-bottom: 40px;
+            @media (max-width: 1023px) {
+                font-size: 12px;
+                line-height: 24px;
+                letter-spacing: 1px;
+                margin-bottom: 32px;
+            }
         }
         .section-content{
             flex: 1;
+            
         }
         .section-image{
             flex: 1;
             position: relative;
+            @media (max-width: 1023px) {
+                text-align: center  !important;
+            }
             img{
                 // max-width: 70%;
                 max-width: 60%;
                 @media (min-width: 1024px) and (max-width: 1340px) {
                     max-width: 70%;
+                  }
+                  @media (max-width: 1023px) {
+                      max-width: 100%;
+                      width: 100%;
                   }
             }
             .overlay{
@@ -182,11 +216,18 @@
 
 
     .about{
+        @media (max-width: 1023px) {
+            padding-top: 32px;
+        }
         .about-title{
                 text-align: right;
+                @media (max-width: 1023px) {
+                      margin-top: 32px;
+                }
                 & span{
                     padding: 0;
                     padding-left: 25px;
+                    
                 }
         }
         .about-content{
@@ -195,6 +236,12 @@
                 font-size: 24px;
                 color: $azure;
                 letter-spacing: 0.5px;
+                @media (max-width: 1023px) {
+                    font-size: 14px;
+                    line-height: 24px;
+                    letter-spacing: 0.29px;   
+                    margin-top: 20px;  
+                }
             }
             .cta-button{
                 color: $azure;
@@ -203,18 +250,36 @@
     }
 
     .swimming-pools{
-        
+        @media (max-width: 1023px) {
+            margin-top: 50px;
+        }
         .products-title{
             text-align: right;
+            @media (max-width: 1023px) {
+                width: 70%;
+                order: 0;
+            }
             & span{
                 padding: 0;
                 padding-left: 40px;
+                @media (max-width: 1023px) {
+                    padding-left: 20px;
+                }
+            }
+        }
+        .section-content{
+            @media (max-width: 1023px) {
+                order: 2;
             }
         }
         & .title2{
             color: $lightBlue;
+            @media (max-width: 1023px) {
+                width: 100%;
+            }
             & span{
                 padding-right: 20px;
+                
             }
         }
         .ranges-title{
@@ -222,6 +287,11 @@
             color: $lightBlue;
             letter-spacing: 1.7px;
             line-height: 20px;
+            @media (max-width: 1023px) {
+                font-size: 12px;
+                letter-spacing: 1.29px;
+                margin-bottom: 8px;
+            }
         }
         .ranges{
             font-weight: 600;
@@ -229,24 +299,47 @@
             letter-spacing: 1.7px;
             line-height: 20px;
             margin-bottom: 50px;
+            @media (max-width: 1023px) {
+                font-size: 12px;
+                letter-spacing: 1.29px;
+                margin-bottom: 32px;
+            }
+        }
+        .txt{
+            @media (max-width: 1023px) {
+                margin-bottom: 16px;
+            }
         }
         .cta-button{
             color: $lightBlue;
         }
         & .swimming-pools-image{
             text-align: right;
+            @media (max-width: 1023px) {
+                order: 1;
+                margin: 32px 0;
+            }
         }
     }
 
 
     .jacuzzis{
-        
-        
+        @media (max-width: 1023px) {
+            margin-top: 50px;
+        }
         & .title2{
             color: $azure;
             text-align: right;
             & span{
                 padding-left: 55px;
+                @media (max-width: 1023px) {
+                    padding-left: 20px;
+                }
+            }
+        }
+        .section-content{
+            @media (max-width: 1023px) {
+                margin-top: 32px;
             }
         }
         
@@ -260,10 +353,20 @@
 
 
     .saunas{
+        @media (max-width: 1023px) {
+            margin-top: 50px;
+            flex-direction: column-reverse;
+            padding-bottom: 50px;
+        }
         & .title2{
             color: $olive;
             & span{
                 padding-right: 25px;
+            }
+        }
+        .section-content{
+            @media (max-width: 1023px) {
+                margin: 32px 0;
             }
         }
         

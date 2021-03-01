@@ -24,18 +24,17 @@ $lang = ICL_LANGUAGE_CODE;
 					<h2><?php _e("Start Your Dream", "homepage")?></h2>
 					<a class="cta-button" href="#"><?php _e('Contact Us', 'homepage')?></a>
 				</div>
-				<?php if(wp_is_mobile(  )){
+				<?php //if(wp_is_mobile(  )){
 						wp_nav_menu( array( 
 						'theme_location' => 'footer-menu' ,
 						'menu_class'     => 'vertical menu accordion-menu',
 						'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu data-multi-open="false" data-submenu-toggle>%3$s</ul>'
-
 					));
-					}else{
+					// }else{
 						dynamic_sidebar( 'footer-widgets' );
-					}?>
+					// }?>
 
-				<div class="contact-info">
+				<!-- <div class="contact-info">
 					<p class="contact-title"><?php _e('Contacts',"homepage")?></p>
 					<p>
 						<?php if($lang == 'ar'):?>
@@ -59,22 +58,22 @@ $lang = ICL_LANGUAGE_CODE;
 						<a href="tel:<?php the_field('phone_number', 10)?>"><?php the_field('phone_number', 10)?></a>
 						<?php endif;?>
 					</p>
-				</div>
+				</div> -->
 				<div class="social-media">
-					<a href=""><i class="icon-facebook"></i></a>
-					<a href=""><i class="icon-instagram"></i></a>
-					<a href=""><i class="icon-youtube-play"></i></a>
+					<a href="<?php the_field('facebook_link', 10)?>" target="_blank"><i class="icon-facebook"></i></a>
+					<a href="<?php the_field('instagram_link', 10)?>" target="_blank"><i class="icon-instagram"></i></a>
+					<a href="<?php the_field('youtube_link', 10)?>" target="_blank"><i class="icon-youtube-play"></i></a>
 				</div>
 			</div>
 			<div class="footer-end-lower">
 				<div class="partners">
-					<a href=""><img src="<?php echo get_stylesheet_directory_uri();?>/src/assets/images/partner1.png" alt=""></a>
-					<a href=""><img src="<?php echo get_stylesheet_directory_uri();?>/src/assets/images/partner2.png" alt=""></a>
+					<a href="" target="_blank"><img src="<?php echo get_stylesheet_directory_uri();?>/src/assets/images/partner1.png" alt=""></a>
+					<a href="" target="_blank"><img src="<?php echo get_stylesheet_directory_uri();?>/src/assets/images/partner2.png" alt=""></a>
 				</div>
 				<div class="social-media">
-					<a href=""><i class="icon-facebook"></i></a>
-					<a href=""><i class="icon-instagram"></i></a>
-					<a href=""><i class="icon-youtube-play"></i></a>
+					<a href="<?php the_field('facebook_link', 10)?>" target="_blank"><i class="icon-facebook"></i></a>
+					<a href="<?php the_field('instagram_link', 10)?>" target="_blank"><i class="icon-instagram"></i></a>
+					<a href="<?php the_field('youtube_link', 10)?>" target="_blank"><i class="icon-youtube-play"></i></a>
 				</div>
 				<?php if($lang == "ar"):?>
 						<p class="copyright">بلو <?php echo date("Y"); ?>. جميع الحقوق محفوظة</p>
@@ -83,13 +82,6 @@ $lang = ICL_LANGUAGE_CODE;
 					<?php endif;?>
 			</div>
 		</div>
-		<!-- <div class="footer-end">
-			<div class="social-media">
-				<a href=""><i class="icon-facebook"></i></a>
-				<a href=""><i class="icon-instagram"></i></a>
-				<a href=""><i class="icon-youtube-play"></i></a>
-			</div>
-		</div> -->
 	</div>
 </footer>
 
