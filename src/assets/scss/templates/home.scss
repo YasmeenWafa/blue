@@ -76,6 +76,7 @@
         display: flex;
         justify-content: space-between;
         @media (max-width: 1023px) {
+            bottom: 90px;
             left: 25px;
             right: unset;
             justify-content: center;

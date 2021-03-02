@@ -37,6 +37,9 @@
     width: 75px;
     height: 75px;
   }
+  .menu > li.is-dropdown-submenu-parent.is-active a {
+    color: $black2;
+  }
   .menu > li > a, .dropdown.menu > li.current-menu-item > a, .dropdown.menu > li.is-active, .wpml-ls-item a{
     color: $black2;
   }
@@ -124,11 +127,24 @@
   display: none;
 }
 
+.wpml-ls{
+  padding: 0;
+}
+.wpml-ls ul{
+  display: flex;
+  align-items: center;
+}
+.wpml-ls ul, .wpml-ls ul li{
+  list-style: none !important;
+}
 .wpml-ls ul li:first-of-type:not(:last-of-type){
   border-right: 1px solid white;
   @media (max-width: 1023px) {
     border-color: $black3;
   }
+}
+.wpml-ls-legacy-list-horizontal a span{
+  vertical-align: unset;
 }
 .rtl .wpml-ls ul li:first-of-type:not(:last-of-type){
   border-right: none;
@@ -187,8 +203,8 @@
       justify-content: space-between;
   }
   .menu-icon{
-      height: 42px;
-      width: 42px;
+      min-height: 42px;
+      min-width: 42px;
       border: 2px solid white;
       transition: all 0.5s;
     & svg path{
@@ -264,8 +280,8 @@
     .close-button{
       position: static;
       border: 2px solid $lightBlue;
-      width: 42px;
-      height: 42px;
+      min-width: 42px;
+      min-height: 42px;
       span{
         color: $lightBlue;
         font-size: 42px;
@@ -352,12 +368,14 @@
   }
   .menu-footer{
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     .social-media{
+      display: flex;
+      align-items: center;
       & a{
         color: black;
-        font-size: 20px;
+        font-size: 18px;
       }
     }
   }

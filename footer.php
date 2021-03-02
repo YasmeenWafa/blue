@@ -24,15 +24,15 @@ $lang = ICL_LANGUAGE_CODE;
 					<h2><?php _e("Start Your Dream", "homepage")?></h2>
 					<a class="cta-button" href="#"><?php _e('Contact Us', 'homepage')?></a>
 				</div>
-				<?php //if(wp_is_mobile(  )){
+				<?php 
 						wp_nav_menu( array( 
 						'theme_location' => 'footer-menu' ,
 						'menu_class'     => 'vertical menu accordion-menu',
-						'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu data-multi-open="false" data-submenu-toggle>%3$s</ul>'
+						'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu data-multi-open="true" data-submenu-toggle>%3$s</ul>'
 					));
-					// }else{
+					
 						dynamic_sidebar( 'footer-widgets' );
-					// }?>
+				?>
 
 				<!-- <div class="contact-info">
 					<p class="contact-title"><?php _e('Contacts',"homepage")?></p>

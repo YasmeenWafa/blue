@@ -64,6 +64,9 @@ body:not(.page-template-home){
     .top-bar .top-bar-end .wpml-ls-item a{
         color: $black2;
     }
+    .top-bar .top-bar-end .wpml-ls ul li:first-of-type:not(:last-of-type){ 
+        border-right: 1px solid $black2;
+    }
     .title-bar{
         .menu-icon{
             border-color: black;
@@ -72,7 +75,20 @@ body:not(.page-template-home){
             }
         }
     }
-    
+    &.rtl .top-bar{
+        .wpml-ls ul li:first-of-type:not(:last-of-type){
+          border-right: none;
+          border-left: 1px solid $black2;
+      
+        }
+      }
+    &.rtl .top-bar.scrolled{
+        .wpml-ls ul li:first-of-type:not(:last-of-type){
+          border-right: none;
+          border-left: 1px solid $black2;
+      
+        }
+      }
 }
 
 .animatedText{
