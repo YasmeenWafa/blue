@@ -24,7 +24,9 @@ get_header(); ?>
                             <?php endif;?>
 
                             <?php if(get_sub_field('redirect_to')):?>
-                            <a class="cta-button" href="<?php the_sub_field("redirect_to")?>"><?php _e("Know More", 'homepage')?></a>
+                            <a class="cta-button" href="<?php the_sub_field("redirect_to")?>">
+                                <span><?php _e("Know More", 'homepage')?></span>
+                            </a>
                             <?php endif;?>
                         </div>
                     </div>
@@ -48,7 +50,7 @@ get_header(); ?>
                 <h1 class="about-title title animatedText"><span><?php _e('About us', "homepage")?></span></h1>
                 <p class="subtitle about-subtitle animatedText"><?php the_field('about_subtitle')?></p>
                 <div class="txt about-text animatedText"><?php the_field('about_text')?></div>
-                <a class="cta-button animatedText" href="/about"><?php _e("Read More", 'homepage')?></a>
+                <a class="cta-button animatedText" href="/about"><span><?php _e("Read More", 'homepage')?></span></a>
             </div>
     </section>
 
@@ -66,7 +68,7 @@ get_header(); ?>
                 <p class="ranges-title animatedText"><?php _e('Our Ranges', 'homepage')?>:</p>
                 <p class="ranges animatedText" ><?php the_field('swimming_pool_ranges')?></p>
 
-                <a class="cta-button animatedText" href="#"><?php _e("Explore Ranges", 'homepage')?></a>
+                <a class="cta-button animatedText" href="#"><span><?php _e("Explore Ranges", 'homepage')?></span></a>
 
             </div>
             <div class="swimming-pools-image section-image">
@@ -88,7 +90,7 @@ get_header(); ?>
 
                 <div class="txt jacuzzis-description animatedText"><?php the_field('jacuzzis_description')?></div>
 
-                <a class="cta-button animatedText" href="#"><?php _e("Explore Ranges", 'homepage')?></a>
+                <a class="cta-button animatedText" href="#"><span><?php _e("Explore Ranges", 'homepage')?></span></a>
 
             </div>
             
@@ -102,7 +104,7 @@ get_header(); ?>
 
                 <div class="txt saunas-description animatedText"><?php the_field('saunas_description')?></div>
 
-                <a class="cta-button animatedText" href="#"><?php _e("Explore Ranges", 'homepage')?></a>
+                <a class="cta-button animatedText" href="#"><span><?php _e("Explore Ranges", 'homepage')?></span></a>
 
             </div>
             <div class="saunas-image section-image">

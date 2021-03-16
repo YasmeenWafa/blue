@@ -139,6 +139,13 @@
   }
   .slogan .cta-button{
     color: black;
+    &::before{
+      background-color: black;
+    }
+    &:hover{
+        border-color: black;
+        color: $lightBlue;
+    }
     @media (max-width: 1023px) {
       font-size: 14px;
      }

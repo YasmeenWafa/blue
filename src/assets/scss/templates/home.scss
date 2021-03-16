@@ -66,6 +66,11 @@
         }
         .cta-button{
             color: white;
+            &:hover{
+                color: black;
+                border-color: white;
+            }
+            
         }
     }
     .slick-dots{
@@ -246,6 +251,13 @@
             }
             .cta-button{
                 color: $azure;
+                &::before{
+                    background-color: $azure;
+                }
+                &:hover{
+                    color: $white2;
+                    border-color: $azure;
+                }
             }
         }
     }
@@ -313,6 +325,13 @@
         }
         .cta-button{
             color: $lightBlue;
+            &::before{
+                background-color: $lightBlue;
+            }
+            &:hover{
+                color: $white2;
+                border-color: $lightBlue;
+            }
         }
         & .swimming-pools-image{
             text-align: right;
@@ -346,6 +365,13 @@
         
         .cta-button{
             color: $azure;
+            &::before{
+                background-color: $azure;
+            }
+            &:hover{
+                color: $white2;
+                border-color: $azure;
+            }
         }
         & .jacuzzis-image{
             text-align: left;
@@ -373,6 +399,13 @@
         
         .cta-button{
             color: $olive;
+            &::before{
+                background-color: $olive;
+            }
+            &:hover{
+                color: $white2;
+                border-color: $olive;
+            }
         }
         & .saunas-image{
             text-align: right;
