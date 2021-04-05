@@ -16,6 +16,9 @@ get_header(); ?>
 			<h1 class="entry-title"><?php _e( 'Search Results for', 'foundationpress' ); ?> "<?php echo get_search_query(); ?>"</h1>
 		</header>
 
+		<?php if(get_query_var('post_type')[0]=='faqs'):?>
+		<?php include 'faqs-content.php' ?>
+		<?php else: ?>
 		<?php if ( have_posts() ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -26,7 +29,7 @@ get_header(); ?>
 				<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
 		<?php endif; ?>
-
+		<?php endif;?>
 		<?php
 		if ( function_exists( 'foundationpress_pagination' ) ) :
 			foundationpress_pagination();
@@ -39,7 +42,7 @@ get_header(); ?>
 		<?php endif; ?>
 
 		</main>
-	<?php get_sidebar(); ?>
+	<?php //get_sidebar(); ?>
 
 	</div>
 </div>
