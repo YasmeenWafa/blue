@@ -91,7 +91,8 @@
   }
 }
 .top-bar-left .top-bar-title{
-  background-color: white;
+  // background-color: white;
+  background-color: $white2;
   padding: 20px;
   padding-top: 35px;
   border-bottom-left-radius: 50%;
@@ -353,12 +354,17 @@
   display: none;
 }
 
+html.is-reveal-open #menuModal{
+   display: flex !important;
+   opacity: 1;
+}
 #menuModal{
-
+  display: none;
+  opacity: 0;
   padding: 24px;
   background-color: $white2;
   top: 0 !important;
-  display: flex;
+  // display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 65%;
