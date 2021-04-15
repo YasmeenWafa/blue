@@ -138,3 +138,80 @@ return $query;
 }
  
 add_filter('pre_get_posts','searchfilter');
+
+
+
+//products
+
+
+// Creating a products Custom Post Type
+function products_custom_post_type() {
+	$labels = array(
+		'name'                => __( 'Products' ),
+		'singular_name'       => __( 'Product'),
+		'menu_name'           => __( 'Products'),
+		'parent_item_colon'   => __( 'Parent Product'),
+		'all_items'           => __( 'All Products'),
+		'view_item'           => __( 'View Product'),
+		'add_new_item'        => __( 'Add New Product'),
+		'add_new'             => __( 'Add New'),
+		'edit_item'           => __( 'Edit Product'),
+		'update_item'         => __( 'Update Product'),
+		'search_items'        => __( 'Search Product'),
+		'not_found'           => __( 'Not Found'),
+		'not_found_in_trash'  => __( 'Not found in Trash')
+	);
+	$args = array(
+		'label'               => __( 'products'),
+		'description'         => __( 'Products'),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'),
+		'public'              => true,
+		'hierarchical'        => false,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'has_archive'         => true,
+		'can_export'          => true,
+		'exclude_from_search' => false,
+	        'yarpp_support'       => true,
+		'taxonomies' 	      => array('post_tag'),
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page'
+);
+	register_post_type( 'products', $args );
+}
+add_action( 'init', 'products_custom_post_type', 0 );
+
+
+
+// Let us create Taxonomy for Custom Post Type
+add_action( 'init', 'products_custom_taxonomy', 0 );
+ 
+//create a custom taxonomy name it "type" for your posts
+function products_custom_taxonomy() {
+ 
+  $labels = array(
+    'name' => _x( 'Product Categories', 'taxonomy general name' ),
+    'singular_name' => _x( 'Product Category', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Product Categories' ),
+    'all_items' => __( 'All Product Categories' ),
+    'parent_item' => __( 'Parent Product Category' ),
+    'parent_item_colon' => __( 'Parent Product Category:' ),
+    'edit_item' => __( 'Edit Product Category' ), 
+    'update_item' => __( 'Update Product Category' ),
+    'add_new_item' => __( 'Add New Product Category' ),
+    'new_item_name' => __( 'New Product Category Name' ),
+    'menu_name' => __( 'Product Categories' ),
+  ); 	
+ 
+  register_taxonomy('product-categories',array('products'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'product-category' ),
+  ));
+}
