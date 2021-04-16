@@ -22,14 +22,82 @@ get_header(); ?>
 	<h1 class="title page-title"><span><?php _e('Products', "products")?></span></h1>
 
 	<div class="product-categories">
-	<?php $terms = get_terms([
+
+	<ul class="tabs product-categories-tabs" data-tabs id="product-categories-tabs"   data-deep-link="true" data-update-history="true"  data-deep-link-smudge="true" data-deep-link-smudge-delay="600" data-auto-focus="true">
+		<?php $terms = get_terms([
 			'taxonomy' => 'product-categories',
 			'hide_empty' => false,
+			'orderby' => 'date',
+            'order'   => 'DESC',
 		]);
-		foreach($terms as $term){
-			echo $term->name;
-		}
-		?>
+		$catIndex = 0;
+		foreach($terms as $term):?>
+			<?php $cat_image = get_field('featured_image', $term->taxonomy . '_' . $term->term_id);?>
+			<li style = "background-image: url(<?php echo $cat_image; ?>)"  class="tabs-title">
+				<a href="#cat<?php echo $catIndex; ?>">
+					<span class="cat-name"><?php echo $term->name;?> <i class="icon-down-open-big"></i></span>
+					<div class="overlay"></div>
+				</a>
+
+			</li>
+		<?php $catIndex+=1; endforeach; ?>
+	</ul>
+
+	<div class="tabs-content product-categories-tabs-content" data-tabs-content="product-categories-tabs">
+		<?php $catIndex = 0;
+		foreach($terms as $term):?>
+			<div class="tabs-panel" id="cat<?php echo $catIndex; ?>">
+			<?php
+				$products = get_posts(array(
+					'post_type' => 'products',
+					'orderby' => 'date',
+					'order' => 'ASC',
+					'tax_query' => array(
+						array(
+						'taxonomy' => 'product-categories',
+						'field' => 'term_id',
+						'terms' => $term->term_id)
+					))
+				);
+			?>
+			<h2 class="title page-subtitle animatedText"><span><?php echo $term->name;?></span></h2>
+
+				<ul class="tabs product-categories-products-tabs animatedText" data-tabs id="product-categories-products-tabs">
+					<p><?php _e('Select Range', 'products');?></p>
+					<?php $productIndex = 0; ?>
+					<?php foreach( $products as $product):?>
+						<li class="tabs-title <?php if ($productIndex == 0) { echo 'is-active'; }?>">
+							<a href="#cat<?php echo $catIndex;?>product<?php echo $productIndex;?>" aria-selected="<?php if ($productIndex == 0) { echo 'true'; }?>"> <?php echo $product->post_title;?></a>
+						</li>
+					<?php $productIndex+=1; endforeach;?>
+				</ul>
+
+				<div class="tabs-content product-categories-products-tabs-content" data-tabs-content="product-categories-products-tabs">
+				<?php $productIndex = 0; ?>
+					<?php foreach( $products as $product):?>
+
+					<div class="tabs-panel <?php if ($productIndex == 0) { echo 'is-active'; }?>" id="cat<?php echo $catIndex;?>product<?php echo $productIndex;?>">
+
+						<div class="product-content">
+							<h2 class="product-title animatedText"><?php echo $product->post_title;?></h2>
+							<div class="product-description animatedText"><?php echo $product->post_content;?></div>
+							<a class="cta-button animatedText" href="<?php echo $product->guid;?>"><span><?php _e('Know More', 'products');?></span></a>
+						</div>
+						<div class="product-image section-image" style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id($product->ID), 'thumbnail' ); ?>);">
+							<div class="overlay"></div>
+						</div>
+
+					</div>
+
+					<?php $productIndex+=1; endforeach;?>
+				</div>
+
+			</div>
+		<?php $catIndex+=1; endforeach; ?>
+		
+	</div>
+
+	
 	</div>
 		<!-- <?php if ( have_posts() ) : ?>
 

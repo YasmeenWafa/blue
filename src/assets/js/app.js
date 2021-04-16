@@ -12,6 +12,7 @@ import Foundation from 'foundation-sites';
 import './navigation';
 import './home';
 import './about';
+import './products';
 import './services';
 import './contact-us';
 import './faqs';
