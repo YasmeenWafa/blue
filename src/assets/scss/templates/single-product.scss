@@ -1,8 +1,17 @@
 .single-product-page-container{
     padding: 225px 130px;
     padding-bottom: 100px;
+    @media (min-width: 1024px) and (max-width: 1250px) {
+       padding: 225px 80px;
+    }
+    @media (min-width: 1900px) {
+        padding: 225px;
+    }
     & .title{
         width: 60%;
+        @media (min-width: 1900px) {
+            width: 45%;
+        }
     }
     .page-title{
         font-size: 70px;
@@ -61,6 +70,9 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        @media (min-width: 1900px) {
+            height: 1200px;
+        }
         .overlay{
             background-color: $white2;
             position: absolute;

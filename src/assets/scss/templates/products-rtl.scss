@@ -4,12 +4,29 @@ body.rtl{
             letter-spacing: 1px;
         }
         .product-categories{
+            & .product-categories-tabs{
+                & .tabs-title a{
+                    & .cat-name{
+                        right: 0;
+                        left: unset;
+                    }
+                }
+            } 
             & .product-categories-products-tabs-content {
                 & .tabs-panel.is-active{
+                    & .product-image{
+                        margin-right: 50px; 
+                        margin-left: 0;
+                        @media (min-width: 1024px) and (max-width: 1250px) {
+                            margin-right: 25px;
+                            margin-left: 0;
+                        }      
+                    }
                     & .product-content{
                         & .product-description{
                             letter-spacing: 0.5px;
                         }
+                        
                         & .cta-button{
                             letter-spacing: 0.5px;
                         }
