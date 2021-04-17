@@ -156,7 +156,7 @@
                     color: $lightBlue;
                 }
                 & .product-categories-products-tabs{
-                    & p , & .tabs-title a{
+                    & .select , & .tabs-title a{
                         color: $lightBlue;
                     }
                 }
@@ -181,7 +181,7 @@
                     color: $azure;
                 }
                 & .product-categories-products-tabs{
-                    & p , & .tabs-title a{
+                    & .select , & .tabs-title a{
                         color: $azure;
                     }
                 }
@@ -206,7 +206,7 @@
                     color: $olive;
                 }
                 & .product-categories-products-tabs{
-                    & p ,  & .tabs-title a{
+                    & .select,  & .tabs-title a{
                         color: $olive;
                     }
                 }
@@ -231,7 +231,7 @@
                     color: $green;
                 }
                 & .product-categories-products-tabs{
-                    & p, & .tabs-title a{
+                    & .select, & .tabs-title a{
                         color: $green;
                     }
                 }
@@ -253,22 +253,34 @@
             }
         }
 
+        .tabs-wrapper{
+            display: flex;
+            overflow-x: auto;
+            margin-bottom: 125px;
+        }
         .product-categories-products-tabs{
             border: none;
             background-color: transparent;  
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            // align-items: center;
+            // overflow-x: auto;
+            // flex-wrap: wrap;
+            // margin-bottom: 125px;
 
             &::before, &::after{
-                display: none;
+                // display: none;
             }
-            & p{
+            & .select{
                 font-weight: 700;
                 font-size: 22px;
                 line-height: 56px;
                 letter-spacing: 0.46px;
                 margin-bottom: 0;
+                white-space: nowrap;
+                padding: 1.25rem 1.5rem;
             }
             & .tabs-title > a:hover{
                 background-color: transparent;
@@ -279,18 +291,22 @@
                 color: $black2 !important;
                 text-decoration: none;
             }
+            & li{
+                width: 20%;
+            }
             & .tabs-title a{
                 font-size: 18px;
                 line-height: 56px;
                 letter-spacing: 0.37px;
                 font-weight: 400;
                 text-decoration: underline;
+                white-space: nowrap;
             } 
         }
         .product-categories-products-tabs-content{
             background-color: transparent;
             border: none;
-            padding-top:125px;
+            // padding-top:125px;
             & .tabs-panel.is-active{
                 display: flex;
                 flex-wrap: wrap;

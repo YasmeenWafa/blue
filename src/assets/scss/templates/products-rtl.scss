@@ -1,0 +1,24 @@
+body.rtl{
+    & .products-page-container{
+        .page-title, .page-subtitle{
+            letter-spacing: 1px;
+        }
+        .product-categories{
+            & .product-categories-products-tabs-content {
+                & .tabs-panel.is-active{
+                    & .product-content{
+                        & .product-description{
+                            letter-spacing: 0.5px;
+                        }
+                        & .cta-button{
+                            letter-spacing: 0.5px;
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+
+    }
+}

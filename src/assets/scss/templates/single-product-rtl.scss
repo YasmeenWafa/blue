@@ -1,0 +1,46 @@
+body.rtl{
+    & .single-product-page-container{
+        .page-title{
+            text-align: left;
+            letter-spacing: 1px;
+            & span{
+                padding: 0;
+                padding-right: 30px;
+            }
+        }
+        .page-subtitle{
+            letter-spacing: 1px;
+            & span{
+                padding: 0;
+                padding-left: 30px;
+            }
+        }
+        .go-back{
+            & i{
+                transform: rotate(180deg);
+                display: inline-block;
+                margin-left: 20px;
+                margin-right: 0;
+            }
+        }
+
+        .product-content{
+            & .product-description-inner{
+                & .description p{
+                    letter-spacing: 0.5px;
+                }
+            } 
+            & .product-variations-inner{
+                float: left;
+            }
+            & ol{
+                & .variation::before{
+                    right: -70px;
+                    left: unset;
+                    content: counter(my-awesome-counter, arabic-indic);
+                }
+            } 
+        } 
+        
+    }
+}

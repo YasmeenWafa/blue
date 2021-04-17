@@ -27,8 +27,8 @@ get_header(); ?>
 		<?php $terms = get_terms([
 			'taxonomy' => 'product-categories',
 			'hide_empty' => false,
-			'orderby' => 'date',
-            'order'   => 'DESC',
+			'orderby' => 'id',
+            'order'   => 'ASC',
 		]);
 		$catIndex = 0;
 		foreach($terms as $term):?>
@@ -52,6 +52,7 @@ get_header(); ?>
 					'post_type' => 'products',
 					'orderby' => 'date',
 					'order' => 'ASC',
+					'numberposts'      => -1,
 					'tax_query' => array(
 						array(
 						'taxonomy' => 'product-categories',
@@ -62,8 +63,10 @@ get_header(); ?>
 			?>
 			<h2 class="title page-subtitle animatedText"><span><?php echo $term->name;?></span></h2>
 
+				<?php if (count($products) > 1):?>
+				<div class="tabs-wrapper">
 				<ul class="tabs product-categories-products-tabs animatedText" data-tabs id="product-categories-products-tabs">
-					<p><?php _e('Select Range', 'products');?></p>
+					<li class="select"><?php _e('Select Range', 'products');?></li>
 					<?php $productIndex = 0; ?>
 					<?php foreach( $products as $product):?>
 						<li class="tabs-title <?php if ($productIndex == 0) { echo 'is-active'; }?>">
@@ -71,17 +74,26 @@ get_header(); ?>
 						</li>
 					<?php $productIndex+=1; endforeach;?>
 				</ul>
+				</div>
+				<?php endif;?>
 
 				<div class="tabs-content product-categories-products-tabs-content" data-tabs-content="product-categories-products-tabs">
 				<?php $productIndex = 0; ?>
 					<?php foreach( $products as $product):?>
 
 					<div class="tabs-panel <?php if ($productIndex == 0) { echo 'is-active'; }?>" id="cat<?php echo $catIndex;?>product<?php echo $productIndex;?>">
+						<?php $product_variations = get_field('product_variations', $product->ID);?>
 
 						<div class="product-content">
 							<h2 class="product-title animatedText"><?php echo $product->post_title;?></h2>
 							<div class="product-description animatedText"><?php echo $product->post_content;?></div>
-							<a class="cta-button animatedText" href="<?php echo $product->guid;?>"><span><?php _e('Know More', 'products');?></span></a>
+							
+							<?php if ($product_variations) :?>
+								<a class="cta-button animatedText" href="<?php echo $product->guid;?>"><span><?php _e('Know More', 'products');?></span></a>
+							<?php else:?>
+								<a class="cta-button animatedText" href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>"><span><?php _e('Contact Us', 'products');?></span></a>
+							<?php endif;?>
+
 						</div>
 						<div class="product-image section-image" style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id($product->ID), 'thumbnail' ); ?>);">
 							<div class="overlay"></div>
