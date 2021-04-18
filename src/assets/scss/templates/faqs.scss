@@ -1,7 +1,7 @@
 .faqs-page-container, #search-results{
 padding: 225px 50px 50px;
     @media (max-width: 1023px) {
-        padding: 100px 50px 50px;
+        padding: 100px 32px 50px;
     }
     @media (min-width: 2000px) {
         padding: 225px 220px 50px;
@@ -11,6 +11,11 @@ padding: 225px 50px 50px;
         width: 52%;
         line-height: 80px;
         letter-spacing: 3px;
+        @media (max-width: 1023px) {
+            width: 100%;
+            letter-spacing: 1.7px;
+            line-height: 32px;
+        }
         @media (min-width: 1024px) and (max-width: 1330px) {
             width: 70%;
         }
@@ -23,6 +28,9 @@ padding: 225px 50px 50px;
         }
         &::after{
             height: 1.8em;
+            @media (max-width: 1023px) {
+                height: 2.7em;
+            }
         }
     }
     #searchform{
@@ -30,6 +38,9 @@ padding: 225px 50px 50px;
         margin-bottom: 60px;
         width: 50%;
         opacity: 0.3;
+        @media (max-width: 1023px) {
+            width: 100%;
+        }
         .input-group-field{
             border-color: black;
             color: black;
@@ -68,6 +79,9 @@ padding: 225px 50px 50px;
         width: 75%;
         border: none;
         background-color: transparent;
+        @media (max-width: 1023px) {
+            width: 100%;
+        }
         & .accordion-item{
             margin-bottom: 35px;
             & .question{
@@ -75,11 +89,17 @@ padding: 225px 50px 50px;
                 background-color: white;
                 color: $black2;
                 border: none;
+                @media (max-width: 1023px) {
+                    padding-right: 1.5rem;
+                }
                 &::before{
                     left: 1rem;
                     right: unset;
                     top: 2rem;
                     font-size: 25px;
+                    @media (max-width: 1023px) {
+                       font-size: 20px;
+                    }
                 }
                 & .question-inner{
                     font-weight: 500;
@@ -87,6 +107,10 @@ padding: 225px 50px 50px;
                     letter-spacing: 0.5px;
                     font-size: 24px;
                     color: $azure;
+                    @media (max-width: 1023px) {
+                        font-size: 18px;
+                        margin-bottom: 0;
+                    }
                 }
                 & .partial-answer{
                     font-weight: 400;
@@ -98,6 +122,9 @@ padding: 225px 50px 50px;
                     opacity: 1;
                     height: auto;
                     transition: all 0.2s;
+                    @media (max-width: 1023px) {
+                        display: none;
+                    }
                 }
                 
             }
@@ -105,9 +132,14 @@ padding: 225px 50px 50px;
                 padding: 1.25rem 3rem;
                 border: none;
                 padding-top: 0;
+                @media (max-width: 1023px) {
+                   padding: 1.25rem 1.5rem;
+                }
                 & .answer-inner{
                     width: 75%;
-                    
+                    @media (max-width: 1023px) {
+                        width: 100%;
+                    }
                     & hr{
                         margin: 0;
                         margin-bottom: 50px;
@@ -118,6 +150,9 @@ padding: 225px 50px 50px;
                         letter-spacing: 1.4px;
                         line-height: 32px;
                         font-size: 16px;
+                        @media (max-width: 1023px) {
+                            letter-spacing: 0.5px;
+                        }
                     }
                 }
             }
