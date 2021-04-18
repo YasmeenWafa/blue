@@ -13,7 +13,10 @@
 		<input type="text" class="input-group-field" value="" name="s" id="s" aria-label="Search" placeholder="<?php
 		esc_attr_e( 'Search', 'foundationpress' ); ?>">
 		<div class="input-group-button">
-			<input type="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'foundationpress' ); ?>" class="button">
+			
+			<button type="submit" id="searchsubmit" class="button">
+				<i class="icon-search"></i>
+			</button>
 		</div>
 	</div>
 </form>

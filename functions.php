@@ -115,12 +115,32 @@ function create_posttype() {
       array(
           'labels' => array(
               'name' => __( 'FAQs' ),
-              'singular_name' => __( 'FAQ' )
+              'singular_name' => __( 'FAQ' ),
+              'menu_name'           => __( 'FAQs'),
+              'parent_item_colon'   => __( 'Parent FAQ'),
+              'all_items'           => __( 'All FAQs'),
+              'view_item'           => __( 'View FAQ'),
+              'add_new_item'        => __( 'Add New FAQ'),
+              'add_new'             => __( 'Add New'),
+              'edit_item'           => __( 'Edit FAQ'),
+              'update_item'         => __( 'Update FAQ'),
+              'search_items'        => __( 'Search FAQ'),
+              'not_found'           => __( 'Not Found'),
+              'not_found_in_trash'  => __( 'Not found in Trash')
           ),
           'public' => true,
           'has_archive' => true,
           'rewrite' => array('slug' => 'faqs'),
           'show_in_rest' => true,
+          'supports'=> array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'),
+          'show_ui'             => true,
+          'show_in_menu'        => true,
+          'show_in_nav_menus'   => true,
+          'show_in_admin_bar'   => true,
+          'has_archive'         => true,
+          'can_export'          => true,
+          'capability_type'     => 'page'
+
 
       )
   );

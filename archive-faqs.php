@@ -17,28 +17,30 @@
 
 get_header(); ?>
 
-<div class="main-container">
-	<div class="main-grid">
-		<main class="main-content">
+<div class="faqs-page-container">
 		
-		<div class="page-header">
-			<hr>
-			<h1 class="title">Frequenty</h1>
-			<h1 class="title">Asked Questions</h1>
-    	</div>
+		<h1 class="title page-title">
+			<span><?php _e('Frequently asked questions','faqs')?></span>
+		</h1>
 		<?php if ( have_posts() ) : ?>
 
 			<?php get_sidebar(); ?>
 			<?php /* Start the Loop */ ?>
-			<ul class="accordion" data-accordion data-allow-all-closed="true">
+			<ul class="accordion faqs-accordion" data-accordion data-allow-all-closed="true">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php //get_template_part( 'template-parts/content', get_post_format() ); ?>
-				<li class="accordion-item" data-accordion-item>
-                        <a href="#" class="accordion-title"><?php the_title();?></a>
+				<li class="accordion-item faq animatedText" data-accordion-item>
+                        <a href="#" class="accordion-title question">
+							<p class="question-inner"><?php the_title();?></p>
+							<div class="partial-answer"><?php the_excerpt();?></div>
+						</a>
 
-                        <div class="accordion-content" data-tab-content>
-                            <?php the_content();?>
+                        <div class="accordion-content answer" data-tab-content>
+                            <div class="answer-inner">
+								<hr>
+								<?php the_content();?>
+							</div>
                         </div>
                     </li>
 			<?php endwhile; ?>
@@ -61,9 +63,6 @@ get_header(); ?>
 				</nav>
 			<?php endif; ?>
 
-		</main>
-
-	</div>
 </div>
 
 <?php get_footer();

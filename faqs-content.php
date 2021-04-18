@@ -1,40 +1,49 @@
-<div class="page-header">
-    <hr>
-    <h1 class="title">Frequenty</h1>
-    <h1 class="title">Asked Questions</h1>
-</div>
 
-<?php if ( have_posts() ) : ?>
 
-<?php get_sidebar(); ?>
-<?php /* Start the Loop */ ?>
-<ul class="accordion" data-accordion data-allow-all-closed="true">
+<!-- <div class="faqs-page-container"> -->
+		
+		<!-- <h1 class="title page-title">
+			<span><?php _e('Frequently asked questions','faqs')?></span>
+		</h1> -->
+		<?php if ( have_posts() ) : ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
-    <?php //get_template_part( 'template-parts/content', get_post_format() ); ?>
-    <li class="accordion-item" data-accordion-item>
-            <a href="#" class="accordion-title"><?php the_title();?></a>
+			<?php get_sidebar(); ?>
+			<?php /* Start the Loop */ ?>
+			<ul class="accordion faqs-accordion" data-accordion data-allow-all-closed="true">
 
-            <div class="accordion-content" data-tab-content>
-                <?php the_content();?>
-            </div>
-        </li>
-<?php endwhile; ?>
-</ul>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php //get_template_part( 'template-parts/content', get_post_format() ); ?>
+				<li class="accordion-item faq animatedText" data-accordion-item>
+                        <a href="#" class="accordion-title question">
+							<p class="question-inner"><?php the_title();?></p>
+							<div class="partial-answer"><?php the_excerpt();?></div>
+						</a>
 
-<?php else : ?>
-    <?php get_template_part( 'template-parts/content', 'none' ); ?>
+                        <div class="accordion-content answer" data-tab-content>
+                            <div class="answer-inner">
+								<hr>
+								<?php the_content();?>
+							</div>
+                        </div>
+                    </li>
+			<?php endwhile; ?>
+			</ul>
 
-<?php endif; // End have_posts() check. ?>
+			<?php else : ?>
+				<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-<?php /* Display navigation to next/previous pages when applicable */ ?>
-<?php
-if ( function_exists( 'foundationpress_pagination' ) ) :
-    foundationpress_pagination();
-elseif ( is_paged() ) :
-?>
-    <nav id="post-nav">
-        <div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-        <div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
-    </nav>
-<?php endif; ?>
+			<?php endif; // End have_posts() check. ?>
+
+			<?php /* Display navigation to next/previous pages when applicable */ ?>
+			<?php
+			if ( function_exists( 'foundationpress_pagination' ) ) :
+				foundationpress_pagination();
+			elseif ( is_paged() ) :
+			?>
+				<nav id="post-nav">
+					<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
+					<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
+				</nav>
+			<?php endif; ?>
+
+<!-- </div> -->

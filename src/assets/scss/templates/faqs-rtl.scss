@@ -1,0 +1,32 @@
+body.rtl{
+    .faqs-page-container, #search-results{
+        & .page-title{
+            text-align: left;
+            letter-spacing: 1px;
+            & span{
+                padding: 0;
+                padding-right: 26px;
+            }
+            &::after{
+                height: 0.5em;
+            }
+        }
+        #searchform{
+            & .input-group-field{
+                border-right: 2px solid;
+                border-left: 0;
+                &::placeholder{
+                    letter-spacing: 0.5px;
+                }
+            }
+            & #searchsubmit{
+                border-left: 2px solid;
+                border-right: 0;
+                &::before{
+                    right: 0;
+                    left: unset;
+                }
+            }
+        }
+    }
+}

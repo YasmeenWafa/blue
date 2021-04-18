@@ -3,11 +3,79 @@
         padding: 200px 50px 50px;
         max-width: unset;
         margin: 0;
+        @media (min-width: 2000px) {
+            padding: 200px 50px 150px;
+        }
         @media (max-width: 1023px) {
             padding: 100px 50px 50px;
         }
         & .main-content{
             width: 100%;
+        }
+        & .page-content{
+            margin-top: 50px;
+        }
+        & .sidebar{
+            width: auto;
+        }
+    }
+}
+    #searchform{
+        margin-top: 80px;
+        margin-bottom: 60px;
+        width: 50%;
+        opacity: 0.3;
+        .input-group-field{
+            border-color: black;
+            color: black;
+            background-color: transparent;
+            border-right: none;
+            border-width: 2px;
+            // padding: 20px 0;
+            height: 64px;
+            text-indent: 2rem;
+            &::placeholder{
+                color: black;
+                font-family: 'Poppins';
+                font-weight: 500;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+        }
+        & #searchsubmit{
+            background-color: transparent;
+            border: 2px solid;
+            color: black;
+            border-left: none;
+            position: relative;
+            &::before{
+                content: '';
+                width: 1px;
+                height: 33px;
+                position: absolute;
+                left: 0;
+                top: 13px;
+                background: black;
+            }
+        }
+    }
+
+body.rtl{
+    #searchform{
+        & .input-group-field{
+            border-right: 2px solid;
+            border-left: 0;
+            &::placeholder{
+                letter-spacing: 0.5px;
+            }
+        }
+        & #searchsubmit{
+            border-left: 2px solid;
+            border-right: 0;
+            &::before{
+                right: 0;
+                left: unset;
+            }
         }
     }
 }
