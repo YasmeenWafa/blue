@@ -23,6 +23,7 @@ get_header(); ?>
 
 	<div class="product-categories">
 
+	<div class="tabs-wrapper1">
 	<ul class="tabs product-categories-tabs" data-tabs id="product-categories-tabs"   data-deep-link="true" data-update-history="true"  data-deep-link-smudge="true" data-deep-link-smudge-delay="600" data-auto-focus="true">
 		<?php $terms = get_terms([
 			'taxonomy' => 'product-categories',
@@ -42,6 +43,7 @@ get_header(); ?>
 			</li>
 		<?php $catIndex+=1; endforeach; ?>
 	</ul>
+	</div>
 
 	<div class="tabs-content product-categories-tabs-content" data-tabs-content="product-categories-tabs">
 		<?php $catIndex = 0;

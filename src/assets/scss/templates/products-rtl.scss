@@ -17,6 +17,11 @@ body.rtl{
                     & .product-image{
                         margin-right: 50px; 
                         margin-left: 0;
+                        @media (max-width:1023px) {
+                            margin: 0;
+                            margin-bottom: 45px;
+                            margin-top: 10px;
+                        }
                         @media (min-width: 1024px) and (max-width: 1250px) {
                             margin-right: 25px;
                             margin-left: 0;
@@ -25,6 +30,9 @@ body.rtl{
                     & .product-content{
                         & .product-description{
                             letter-spacing: 0.5px;
+                            & ul{
+                                margin-right: 1.25rem;
+                            }
                         }
                         
                         & .cta-button{
