@@ -6,6 +6,9 @@ body.rtl{
             & span{
                 padding: 0;
                 padding-right: 30px;
+                @media (max-width:1023px) {
+                    padding-right: 20px;
+                }
             }
         }
         .page-subtitle{
@@ -21,6 +24,9 @@ body.rtl{
                 display: inline-block;
                 margin-left: 20px;
                 margin-right: 0;
+                @media (max-width:1023px) {
+                    margin-left: 15px;
+                }
             }
         }
 
@@ -32,12 +38,23 @@ body.rtl{
             } 
             & .product-variations-inner{
                 float: left;
+                @media (max-width:1023px) {
+                    float: none;
+                }
             }
             & ol{
+                @media (max-width:1023px) {
+                    margin-left: 0;
+                    margin-right: 1.25rem;
+                }
                 & .variation::before{
                     right: -70px;
                     left: unset;
                     content: counter(my-awesome-counter, arabic-indic);
+                    @media (max-width:1023px) {
+                        margin-left: 35px;
+                        margin-right: 0;
+                    }
                 }
             } 
         } 

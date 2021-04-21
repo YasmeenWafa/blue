@@ -1,6 +1,10 @@
 .single-product-page-container{
     padding: 225px 130px;
     padding-bottom: 100px;
+
+    @media (max-width:1023px) {
+        padding: 170px 20px 70px; 
+    }
     @media (min-width: 1024px) and (max-width: 1250px) {
        padding: 225px 80px;
     }
@@ -19,9 +23,21 @@
     .page-title{
         font-size: 70px;
         text-align: right;
+        @media (max-width:1023px) {
+            font-size: 28px;
+            letter-spacing: 2.5px;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+        @media (min-width: 600px) and (max-width:1023px) {
+            width: 50%;
+        }
         & span{
             padding: 0;
             padding-left: 30px;
+            @media (max-width:1023px) {
+                padding-left: 20px;
+             }
         }
     }
     .page-subtitle{
@@ -29,8 +45,20 @@
         text-transform: uppercase;
         line-height: 102px;
         letter-spacing: 5.5px;
+        @media (max-width:1023px) {
+            font-size: 16px;
+            letter-spacing: 1.4px;
+            line-height: 32px;
+            width: 80%;
+        }
+        @media (min-width: 600px) and (max-width:1023px) {
+            width: 50%;
+        }
         &::after{
             height: 1.2em;
+            @media (max-width:1023px) {
+                height: 1em;
+            }
         }
         & span{
             padding: 0;
@@ -57,11 +85,17 @@
         display: inline-block;
         margin-top: 47px;
         margin-bottom: 77px;
+        @media (max-width:1023px) {
+            font-size: 13px;
+        }
         & i{
             border: 2px solid;
             border-radius: 50%;
             padding: 1px;
             margin-right: 20px;
+            @media (max-width:1023px) {
+                margin-right: 15px;
+            }
             &::before{
                 font-weight: 900;
             }
@@ -73,6 +107,13 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        @media (max-width:1023px) {
+            margin: 0 20px;
+            height: 195px;
+        }
+        @media (min-width: 600px) and (max-width:1023px) {
+            height: 495px;
+        }
         @media (min-width: 1900px) {
             height: 1200px;
         }
@@ -97,16 +138,31 @@
         display: flex;
         flex-wrap: wrap;
         margin-top: 144px;
+        @media (max-width:1023px) {
+            padding: 0 20px;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            margin-top: 50px;
+        }
         & .product-description, & .product-variations{
             flex: 1;
+            @media (max-width:1023px) {
+                flex: unset;
+            }
         }
         & .product-description-inner{
             width: 80%;
+            @media (max-width:1023px) {
+                width: 100%;
+            }
             & h3{
                 font-weight: 500;
                 font-size: 32px;
                 letter-spacing: 0.67px;
                 margin-bottom: 23px;
+                @media (max-width:1023px) {
+                   font-size: 17px;
+                }
                 &.lightBlue{
                     color: $lightBlue;
                 }
@@ -127,9 +183,17 @@
                 line-height: 32px;
                 letter-spacing: 1.4px;
                 color: $black2;
+                @media (max-width:1023px) {
+                    font-size: 13px;
+                    letter-spacing: 0.5px;
+                    line-height: 20px;
+                }
             }
             & .cta-button{
                 margin-top: 70px;
+                @media (max-width:1023px) {
+                    margin-top: 30px;
+                }
                 &.lightBlue{
                     color: $lightBlue;
 
@@ -180,14 +244,25 @@
             float: right;
             width: fit-content;
             max-width: 80%;
+            @media (max-width:1023px) {
+                max-width: unset;
+                margin-top: 60px;
+                float: none;
+            }
             & ol{
                 list-style: none;
                 counter-reset: my-awesome-counter;
+                // @media (max-width:1023px) {
+                //     margin: 0;
+                // }
                 & .variation{
                     counter-increment: my-awesome-counter;
                     display: flex;
                     margin-bottom: 70px;
                     position: relative;
+                    @media (max-width:1023px) {
+                        margin-bottom: 50px;
+                    }
                     &:last-of-type{
                         margin-bottom: 0;
                     }
@@ -200,6 +275,11 @@
                         top: 0;
                         left: -70px;
                         line-height: 1;
+                        @media (max-width:1023px) {
+                            position: static;
+                            margin-right: 35px;
+                            font-size: 42px;
+                        }
                     }
                     &.lightBlue{
                         &::before{
@@ -228,6 +308,10 @@
                         line-height: 32px;
                         letter-spacing: 1.9px;
                         color: $black2;
+                        @media (max-width:1023px) {
+                            font-size: 15px;
+                            letter-spacing: 0.7px;
+                        }
                     }
                     & .variation-description p{
                         font-weight: 400;
@@ -235,6 +319,11 @@
                         line-height: 32px;
                         letter-spacing: 1.4px;
                         color: $black2;
+                        @media (max-width:1023px) {
+                            font-size: 13px;
+                            letter-spacing: 0.5px;
+                            line-height: 25px;
+                        }
                     }
                 }
             }
