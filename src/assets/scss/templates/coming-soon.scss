@@ -9,5 +9,8 @@
         color: $black2;
         text-transform: uppercase;
         letter-spacing: 3px;
+        @media (max-width: 1023px) {
+            width: auto;
+        }
     }
 }
