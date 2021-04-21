@@ -70,6 +70,9 @@
             &:hover{
                 color: black;
                 border-color: white;
+                @media (max-width:1023px) {
+                    color: white;
+                }
             }
             
         }
@@ -258,6 +261,9 @@
                 &:hover{
                     color: $white2;
                     border-color: $azure;
+                    @media (max-width:1023px) {
+                        color: $azure;
+                    }
                 }
             }
         }
@@ -332,6 +338,9 @@
             &:hover{
                 color: $white2;
                 border-color: $lightBlue;
+                @media (max-width:1023px) {
+                    color: $lightBlue;
+                }
             }
         }
         & .swimming-pools-image{
@@ -372,6 +381,9 @@
             &:hover{
                 color: $white2;
                 border-color: $azure;
+                @media (max-width:1023px) {
+                    color: $azure;
+                }
             }
         }
         & .jacuzzis-image{
@@ -406,6 +418,9 @@
             &:hover{
                 color: $white2;
                 border-color: $olive;
+                @media (max-width:1023px) {
+                    color: $olive;
+                }
             }
         }
         & .saunas-image{

@@ -506,6 +506,9 @@
         &:hover{
             border-color: $black2;
             color: white;
+            @media (max-width:1023px) {
+              color: $black2;
+          }
         }
       }
     }

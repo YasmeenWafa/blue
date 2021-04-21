@@ -203,6 +203,9 @@
                     &:hover{
                         color: $white2;
                         border-color: $lightBlue;
+                        @media (max-width:1023px) {
+                            color: $lightBlue;
+                        }
                     }
                 }
                 &.azure{
@@ -214,6 +217,9 @@
                     &:hover{
                         color: $white2;
                         border-color: $azure;
+                        @media (max-width:1023px) {
+                            color: $azure;
+                        }
                     }
                 }
                 &.olive{
@@ -225,6 +231,9 @@
                     &:hover{
                         color: $white2;
                         border-color: $olive;
+                        @media (max-width:1023px) {
+                            color: $olive;
+                        }
                     }
                 }
                 &.green{
@@ -236,6 +245,9 @@
                     &:hover{
                         color: $white2;
                         border-color: $green;
+                        @media (max-width:1023px) {
+                            color: $green;
+                        }
                     }
                 }
             }

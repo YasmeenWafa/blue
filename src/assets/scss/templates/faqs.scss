@@ -13,9 +13,19 @@ padding: 225px 50px 50px;
         letter-spacing: 3px;
         @media (max-width: 1023px) {
             width: 100%;
+            // width: 80%;
+            font-size: 24px;
             letter-spacing: 1.7px;
             line-height: 32px;
         }
+        @media (min-width: 600px) and (max-width:850px) {
+            width: 50%;
+        }
+        @media (min-width: 851px) and (max-width:1023px) {
+            width: 70%;
+            font-size: 30px;
+        }
+
         @media (min-width: 1024px) and (max-width: 1330px) {
             width: 70%;
         }
@@ -29,7 +39,10 @@ padding: 225px 50px 50px;
         &::after{
             height: 1.8em;
             @media (max-width: 1023px) {
-                height: 2.7em;
+                height: 2em;
+            }
+            @media (min-width: 851px) and (max-width:1023px) {
+                height: 0.5em;
             }
         }
     }

@@ -43,8 +43,14 @@ get_header(); ?>
 			</li>
 		<?php $catIndex+=1; endforeach; ?>
 	</ul>
+		
 	</div>
-
+	<!-- <div class="scroll-down">
+		<span><?php //_e("Drag for more", "products")?> </span>
+		<div class="c-scrolldown">
+			<div class="c-line"></div>
+		</div>
+	</div> -->
 	<div class="tabs-content product-categories-tabs-content" data-tabs-content="product-categories-tabs">
 		<?php $catIndex = 0;
 		foreach($terms as $term):?>
