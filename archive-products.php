@@ -91,7 +91,7 @@ get_header(); ?>
 							<div class="product-description animatedText"><?php echo $product->post_content;?></div>
 							
 							<?php if ($product_variations) :?>
-								<a class="cta-button animatedText" href="<?php echo $product->guid;?>"><span><?php _e('Know More', 'products');?></span></a>
+								<a class="cta-button animatedText" href="<?php echo get_permalink( $product->ID); ?>"><span><?php _e('Know More', 'products');?></span></a>
 							<?php else:?>
 								<a class="cta-button animatedText" href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>"><span><?php _e('Contact Us', 'products');?></span></a>
 							<?php endif;?>

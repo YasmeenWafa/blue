@@ -24,7 +24,7 @@ get_header(); ?>
 	<h1 class="title page-title"><span><?php _e('Products', "products")?></span></h1>
 
 	<div class="product-categories">
-
+	<div class="tabs-wrapper1">
 	<ul class="tabs product-categories-tabs" data-tabs id="product-categories-tabs"   data-deep-link="true" data-update-history="true"  data-deep-link-smudge="true" data-deep-link-smudge-delay="600" data-auto-focus="true">
 		<?php $terms = get_terms([
 			'taxonomy' => 'product-categories',
@@ -44,6 +44,7 @@ get_header(); ?>
 			</li>
 		<?php $catIndex+=1; endforeach; ?>
 	</ul>
+	</div>
 
 	<div class="tabs-content product-categories-tabs-content" data-tabs-content="product-categories-tabs">
 		<?php $catIndex = 0;
@@ -91,7 +92,7 @@ get_header(); ?>
 							<div class="product-description animatedText"><?php echo $product->post_content;?></div>
 							
 							<?php if ($product_variations) :?>
-								<a class="cta-button animatedText" href="<?php echo $product->guid;?>"><span><?php _e('Know More', 'products');?></span></a>
+								<a class="cta-button animatedText" href="<?php echo get_permalink( $product->ID); ?>"><span><?php _e('Know More', 'products');?></span></a>
 							<?php else:?>
 								<a class="cta-button animatedText" href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>"><span><?php _e('Contact Us', 'products');?></span></a>
 							<?php endif;?>
