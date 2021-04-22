@@ -11,7 +11,7 @@ get_header(); ?>
         <div class="contact-us-info">
 
             <?php if(have_rows('offices')):?>
-                <div class="info-block address">
+                <div class="info-block address animatedText">
                     <h6 class="info-title"><?php _e("Address", "contact")?>:</h6>
                     <?php while(have_rows('offices')): the_row();?>
                         <div class="office">
@@ -23,14 +23,14 @@ get_header(); ?>
             <?php endif;?>
             
             <?php if(get_field('phone_number')):?>
-                <div class="info-block phone">
+                <div class="info-block phone animatedText">
                     <h6 class="info-title"><?php _e("Telephone", "contact")?>:</h6>
                     <a href="tel:<?php the_field('phone_number');?>" class="number"><?php the_field('phone_number')?></a>
                 </div>
             <?php endif;?>
 
             <?php if(have_rows('emails')):?>
-                <div class="info-block email">
+                <div class="info-block email animatedText">
                     <h6 class="info-title"><?php _e("Email", "contact")?>:</h6>
                     <?php while(have_rows('emails')): the_row();?>
                         <div class="email">
