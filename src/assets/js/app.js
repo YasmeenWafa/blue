@@ -26,3 +26,9 @@ $('.scroll-down a').on('click', function(event){
     event.preventDefault();
     $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
 });
+
+$(document).on('closed.zf.reveal', '[data-reveal]', function () {
+    // your code goes here...
+    console.log("closed")
+    $('html').removeClass('is-reveal-open')
+  });

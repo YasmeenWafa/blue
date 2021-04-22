@@ -1,0 +1,58 @@
+body.rtl{
+    .contact-us-page-container{
+        & .page-title{
+            text-align: left;
+            letter-spacing: 0.5px;
+            & span{
+                padding: 0;
+                padding-right: 30px;
+            }
+        }
+        & .contact-us-content{
+            
+            & .contact-us-info{
+                padding-left: 50px;
+                padding-right: 0;
+                & .number{
+                    direction: ltr;
+                    display: block;
+                    text-align: right;
+                }
+            }
+
+            & .contact-us-form{
+                & .form-container{
+                    .gform_confirmation_message{
+                        text-align: center !important;
+                    }
+
+                    & .gform_wrapper{
+                        @media (max-width: 1023px) {
+                            padding: 0;
+                        }
+                        & .gform_heading{
+                            & .gform_description{
+                                & p{
+                                    text-align: center !important;
+                                }
+                            }
+                        }
+                        & .gform_body {
+                            & .gfield{
+                                padding: 0 !important;
+                                max-width: 100% !important;
+                                & select{
+                                    background-position: left 1rem center;
+                                }
+                            }
+                            & .gfield_error{
+                                padding: 0 !important;
+                                max-width: 100% !important;
+                            }
+                        }
+                    }
+                } 
+            } 
+        }
+    }
+}
