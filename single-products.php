@@ -34,9 +34,9 @@ get_header(); ?>
 	
 	<a href="<?php echo esc_url( home_url( '/products' ) ); ?>" class="go-back"> <i class="icon-left-open-big"></i><?php _e('Go Back','products')?></a>
 
-	<div class="product-featured-image section-image" style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)">
-		<!-- <img  class="" src="<?php the_post_thumbnail_url( 'large' ); ?>" alt=""> -->
+	<div class="product-featured-image section-image" >
 		<div class="overlay"></div>
+		<img  class="" src="<?php the_post_thumbnail_url( 'large' ); ?>" alt="">
 	</div>
 	<div class="product-content">
 		<div class="product-description">

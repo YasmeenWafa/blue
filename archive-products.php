@@ -103,8 +103,9 @@ get_header(); ?>
 							<?php endif;?>
 
 						</div>
-						<div class="product-image section-image" style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id($product->ID), 'thumbnail' ); ?>);">
+						<div class="product-image section-image" style="background-image: url(<?php //echo wp_get_attachment_url( get_post_thumbnail_id($product->ID), 'thumbnail' ); ?>);">
 							<div class="overlay"></div>
+							<img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($product->ID), 'thumbnail' ); ?>" alt="">
 						</div>
 
 					</div>
