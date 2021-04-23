@@ -1,0 +1,52 @@
+body.rtl{
+    & .about-page-container{
+        & .page-title{
+            text-align: left;
+            letter-spacing: 1px;
+            &::after{
+                height: 0.5em;
+            }
+            & span{
+                padding-right: 20px;
+                padding-left: 0;
+                & br{
+                    display: none;
+                }
+                
+                // @media (max-width:1023px) {
+                //     padding-right: 10px;
+                //     padding-left: 0;
+                // }
+                // @media (min-width: 600px) and (max-width:1023px) {
+                //     padding-right: 30px;
+                //     padding-left: 0;
+                // }
+            }
+        }
+        & .about-blue-upper{
+            & .about-blue-upper-content{
+                padding: 40px 80px 40px 40px;
+                & .vision-and-mission-block{
+                    &:first-of-type{
+                        padding-right: 0;
+                        padding-left: 30px;
+                    }
+                }
+            }
+        }
+        & .about-blue-lower-title{
+            letter-spacing: 0.5px;
+        }
+        & .about-blue-lower{
+            & .about-blue-lower-text{
+                padding-left: 60px;
+                padding-right: 0;
+                & .about-blue-lower-paragraph{
+                    & p{
+                        letter-spacing: 0.5px;
+                    }
+                }
+            }
+        }
+    }
+}

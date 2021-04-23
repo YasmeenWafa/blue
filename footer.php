@@ -70,5 +70,7 @@ $lang = ICL_LANGUAGE_CODE;
 <?php endif; ?>
 
 <?php wp_footer(); ?>
+<script src="<?php echo get_stylesheet_directory_uri();?>/src/assets/js/fancybox/jquery.fancybox.min.js"></script>
+
 </body>
 </html>
