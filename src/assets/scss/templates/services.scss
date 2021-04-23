@@ -1,0 +1,95 @@
+.services-page-container{
+    padding: 225px 95px 100px;
+    display: flex;
+    flex-direction: column;
+    @media (max-width:1023px) {
+    padding: 170px 20px 70px; 
+    }
+    @media (min-width: 1024px) and (max-width: 1250px) {
+        padding: 225px 50px 100px;
+    }
+    @media (min-width: 1550px) and (max-width: 2099px) {
+        padding: 225px 100px;
+        padding-bottom: 100px;
+    }
+    @media (min-width: 2100px) {
+        padding: 225px;
+        padding-bottom: 100px;
+    }
+    .page-title{
+        text-align: right;
+        width: 85%;
+        @media (max-width:1023px) {
+            font-size: 24px;
+            width: 90%;
+        }
+        @media (min-width: 600px) and (max-width:1023px) {
+            width: 70%;
+        }
+
+        @media (min-width: 1024px) and (max-width: 1250px) {
+           width: 95%;
+        }
+        @media (min-width: 1550px) and (max-width: 2099px) {
+           width: 75%;
+        }
+        @media (min-width: 2100px) {
+            width: 60%;
+        }
+        & span{
+            padding-left: 40px;
+            padding-right: 0;
+            @media (max-width:1023px) {
+                padding-left: 10px;
+            }
+            @media (min-width: 600px) and (max-width:1023px) {
+                padding-left: 30px;
+            }
+        }
+    }
+    & .services-image{
+        margin-top: 55px;
+        margin-bottom: 65px;
+        @media (max-width:1023px) {
+            margin-top: 25px;
+            margin-bottom: 35px;
+        }
+        & img{
+            width: 100%;
+        }
+    }
+    & .services-text{
+        text-align: justify;
+        & p{
+            font-weight: 400;
+            color: $black2;
+            font-size: 21px;
+            line-height: 36px;
+            letter-spacing: 1.8px;
+            @media (max-width:1023px) {
+                font-size: 15px;
+                letter-spacing: 0.5px;
+                line-height: 25px;
+            }
+        }
+    }
+    & .cta-button{
+        color: $azure;
+        margin-top: 45px;
+        align-self: center;
+        text-align: center;
+        @media (max-width:1023px) {
+            margin-top: 25px;
+        }
+        &::before{
+            background-color: $azure;
+        }
+        &:hover{
+            color: $white2;
+            border-color: $azure;
+            @media (max-width:1023px) {
+                color: $azure;
+            }
+        }
+    }
+}

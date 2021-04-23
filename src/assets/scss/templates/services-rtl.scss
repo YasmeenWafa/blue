@@ -1,0 +1,25 @@
+body.rtl{
+    .services-page-container{
+        & .page-title{
+            text-align: left;
+            letter-spacing: 1px;
+            & span{
+                padding-right: 40px;
+                padding-left: 0;
+                @media (max-width:1023px) {
+                    padding-right: 10px;
+                    padding-left: 0;
+                }
+                @media (min-width: 600px) and (max-width:1023px) {
+                    padding-right: 30px;
+                    padding-left: 0;
+                }
+            }
+        }
+        & .services-text{
+            & p{
+                letter-spacing: 0.5px;
+            }
+        }
+    }
+}
