@@ -135,6 +135,9 @@
             align-items: unset;
             flex-wrap: nowrap;
         }
+        @media  (min-width: 600px) and (max-width:1023px) {
+            padding: 24px 65px;
+        }
             & .title{
                 position: relative;
                 color: $black2;

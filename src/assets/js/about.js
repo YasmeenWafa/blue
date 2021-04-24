@@ -49,7 +49,7 @@ $('.slider-for').slick({
 
 
 const calcHeights = () =>{
-  let width = $('.about-blue-lower-images').width();
+  let width = $('.about-blue-lower-images .slider-for .slick-slide').width();
   let height =  (width / 1.068282528);
   $('.about-blue-lower-images .slider-for').css('height',height)
   

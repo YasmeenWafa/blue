@@ -25,7 +25,7 @@ get_header(); ?>
 
 	<div class="product-categories">
 	<div class="tabs-wrapper1">
-	<ul class="tabs product-categories-tabs" data-tabs id="product-categories-tabs"   data-deep-link="true" data-update-history="true"  data-deep-link-smudge="true" data-deep-link-smudge-delay="600" data-auto-focus="true">
+	<ul class="tabs product-categories-tabs" data-tabs id="product-categories-tabs"   data-deep-link="true" data-update-history="true"  data-deep-link-smudge="true" data-deep-link-smudge-delay="600" data-auto-focus="false">
 		<?php $terms = get_terms([
 			'taxonomy' => 'product-categories',
 			'hide_empty' => false,

@@ -8,9 +8,7 @@ get_header(); ?>
 <div class="about-page-container">
     <div class="about-blue-upper">
         <h1 class="title page-title">
-            <span><?php _e('Get to','about'); ?><br><?php _e('know us','about'); ?></span>
-            <!-- <br>
-            <span><?php _e('know us','about'); ?></span> -->
+            <span><?php _e('Get to ','about'); ?><br><?php _e('know us','about'); ?></span>
         </h1>
         <div class="about-blue-upper-content">
             <p class="about-blue-description"><?php the_field('about_blue_upper_paragraph')?></p>

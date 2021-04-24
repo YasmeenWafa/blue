@@ -9,3 +9,10 @@ $('.product-categories-tabs .tabs-title a').on('click', function(event){
         $('html,body').animate({scrollTop:$(this).offset().top}, 500);
     }
 });
+
+let url = window.location.pathname;
+// console.log(url);
+if(url.includes('product-category')){
+    // console.log("yes")
+    $('.product-categories-tabs .tabs-title.is-active a').trigger('click');
+}

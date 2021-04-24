@@ -26,10 +26,16 @@ body.rtl{
         & .about-blue-upper{
             & .about-blue-upper-content{
                 padding: 40px 80px 40px 40px;
+                @media (max-width:1023px) {
+                    padding: 20px;
+                }
                 & .vision-and-mission-block{
                     &:first-of-type{
                         padding-right: 0;
                         padding-left: 30px;
+                        @media (max-width:1023px) {
+                            padding: 0;
+                        }
                     }
                 }
             }
@@ -41,6 +47,9 @@ body.rtl{
             & .about-blue-lower-text{
                 padding-left: 60px;
                 padding-right: 0;
+                @media (max-width:1023px) {
+                    padding: 20px;
+                }
                 & .about-blue-lower-paragraph{
                     & p{
                         letter-spacing: 0.5px;
