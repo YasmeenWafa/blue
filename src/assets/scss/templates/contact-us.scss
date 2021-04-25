@@ -93,6 +93,9 @@
                     color: $azure;
                     text-decoration: underline;
                 }
+                & .number{
+                    display: block;
+                }
                 & .number, .email-address{
                     color: $black2;
                 }

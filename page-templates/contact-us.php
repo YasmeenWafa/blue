@@ -22,10 +22,12 @@ get_header(); ?>
                 </div>
             <?php endif;?>
             
-            <?php if(get_field('phone_number')):?>
+            <?php if(have_rows('phone_numbers')):?>
                 <div class="info-block phone animatedText">
                     <h6 class="info-title"><?php _e("Telephone", "contact")?>:</h6>
-                    <a href="tel:<?php the_field('phone_number');?>" class="number"><?php the_field('phone_number')?></a>
+                    <?php while(have_rows('phone_numbers')): the_row();?>
+                    <a href="tel:<?php the_sub_field('phone_number');?>" class="number"><?php the_sub_field('phone_number')?></a>
+                    <?php endwhile;?>
                 </div>
             <?php endif;?>
 
