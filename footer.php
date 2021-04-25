@@ -36,7 +36,7 @@ $lang = ICL_LANGUAGE_CODE;
 			<div class="footer-end-upper">
 				<div class="slogan">
 					<h2><?php _e("Start Your Dream", "homepage")?></h2>
-					<a class="cta-button" href="#"><span><?php _e('Contact Us', 'homepage')?></span></a>
+					<a class="cta-button" href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>"><span><?php _e('Contact Us', 'homepage')?></span></a>
 				</div>
 			</div>
 		</div>
