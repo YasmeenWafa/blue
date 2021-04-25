@@ -16,3 +16,12 @@ if(url.includes('product-category')){
     // console.log("yes")
     $('.product-categories-tabs .tabs-title.is-active a').trigger('click');
 }
+
+
+$('.product-categories-products-tabs .tabs-title a').on('click', function(event){   
+    let tabId = $(this).attr('href');
+    setTimeout(function(){
+        $('.product-categories-products-tabs-content .tabs-panel'+ tabId+ ' .animatedText ').addClass('show');
+        $('.product-categories-products-tabs-content .tabs-panel'+ tabId+ ' .overlay ').addClass('animateImg');
+    }, 200)  
+});
