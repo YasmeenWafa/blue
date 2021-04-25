@@ -1,3 +1,32 @@
+$(document).ready(function(){
+  var animatedText = $(".animatedText");
+  if(animatedText.length!=0){
+    animatedText.each(function(index){
+       var top_of_element = $(this).offset().top;
+       var bottom_of_element = $(this).offset() + $(this).outerHeight();
+       var top_of_screen = $(window).scrollTop();
+       var bottom_of_screen = $(window).scrollTop() + window.innerHeight;
+       if((bottom_of_screen > top_of_element) && (top_of_screen < top_of_element)){
+           $(this).addClass("show")
+       } 
+     })
+    }
+
+   var animatedImages = $(".section-image");
+ if(animatedImages.length!=0){
+      animatedImages.each(function(index){
+      var top_of_element = $(this).offset().top;
+      var bottom_of_element = $(this).offset() + $(this).outerHeight();
+      var top_of_screen = $(window).scrollTop();
+      var bottom_of_screen = $(window).scrollTop() + window.innerHeight;
+      if((bottom_of_screen > top_of_element) && (top_of_screen < top_of_element)){
+          $(this).children().first().addClass("animateImg")
+      } 
+    })
+   }
+})
+
+
 
 //////////////// text animation ///////////////
 
