@@ -466,6 +466,9 @@
         font-weight: 700;
       }
       .sub-menu{
+        & .menu-item.phone a{
+          direction: ltr;
+        }
         .menu-item a{
           font-size: 14px;
           font-weight: 300;
