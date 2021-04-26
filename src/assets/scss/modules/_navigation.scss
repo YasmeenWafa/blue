@@ -396,6 +396,12 @@ html.is-reveal-open #menuModal{
   }
   .menu-center{
     margin: 10px 0;
+    .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after{
+      top: 20%;
+    }
+    .accordion-menu .is-accordion-submenu-parent[aria-expanded='true'] > a::after{
+      top: 50%;
+    }
     & .menu{
       .menu-item a{
         padding: 0rem 1rem;

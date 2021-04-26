@@ -21,6 +21,13 @@ get_header(); ?>
                     <?php endwhile;?>
                 </div>
             <?php endif;?>
+
+            <?php if(get_field('opening_hours')):?>
+                <div class="info-block opening-hours animatedText">
+                    <h6 class="info-title"><?php _e("Opening Hours", "contact")?>:</h6>
+                    <p class="opening-hours number"><?php the_field('opening_hours');?></p>
+                </div>
+            <?php endif;?>
             
             <?php if(have_rows('phone_numbers')):?>
                 <div class="info-block phone animatedText">

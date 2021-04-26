@@ -373,17 +373,23 @@
 .footer-grid{
   // margin: 0 auto;
   // max-width: 75rem;
-  padding: 60px 100px;
+  max-width: 1280px;
+  // padding: 60px 100px;
+  padding: 60px 70px;
   display: flex;
   flex-direction: column;
   // justify-content: space-between;
   // flex-wrap: wrap;
   // max-width: 90rem;
   margin:  0 auto;
-  @media (min-width: 1024px) and (max-width: 1101px) {
-    padding: 60px 40px;
+  @media (max-width:1023px) {
+    max-width: unset;
   }
-  @media (min-width: 1102px) and (max-width: 1200px) {
+  @media (min-width: 1024px) and (max-width: 1101px) {
+    // padding: 60px 40px;
+    padding: 60px 25px;
+  }
+  @media (min-width: 1102px) and (max-width: 1300px) {
     padding: 60px 70px;
   }
   @media (max-width: 1023px) {
@@ -426,6 +432,12 @@
       order: 2;
       margin: 50px 0;
     }
+    .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after{
+      top: 20%;
+    }
+    .accordion-menu .is-accordion-submenu-parent[aria-expanded='true'] > a::after{
+      top: 50%;
+    }
     .accordion-menu{
       display: none;
       @media (max-width: 1023px) {
@@ -449,12 +461,27 @@
       }
     }
     .widget_nav_menu{
+      margin: 0 0.3rem;
+      flex: unset;
       @media (max-width: 1023px) {
         display: none;
       }
       .menu{
         display: flex;
-        justify-content: space-evenly;
+        // justify-content: space-evenly;
+        justify-content: space-between;
+      }
+      .menu-item-has-children{
+        margin-right: 80px;
+        @media (min-width: 1024px) and (max-width: 1101px) {
+          margin-right: 40px;
+        }
+        @media (min-width: 1102px) and (max-width: 1200px) {
+          margin-right: 60px;
+        }
+        &:last-of-type{
+          margin: 0;
+        }
       }
       .menu-item.is-active a{
         background-color: transparent;
@@ -473,6 +500,8 @@
           font-size: 14px;
           font-weight: 300;
           color: $black2;
+          line-height: 20px;
+          max-width: 150px;
         }
       }
     }
@@ -590,8 +619,27 @@
 .rtl{
   .footer-upper{
     & .footer-center-upper{
+      & .menu-item-has-children{
+        // margin-left: 30px;
+        margin-right: 0;
+        margin-left: 80px;
+        @media (min-width: 1024px) and (max-width: 1101px) {
+          margin-left: 40px;
+        }
+        @media (min-width: 1102px) and (max-width: 1200px) {
+          margin-left: 60px;
+        }
+        &:last-of-type{
+          margin: 0;
+        }
+      }
       & .menu-item-has-children a{
         letter-spacing: 0;
+      }
+      & .sub-menu{
+          & .menu-item a{
+            max-width: 180px;
+          }
       }
     }
   }

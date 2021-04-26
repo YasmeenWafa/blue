@@ -41,6 +41,64 @@ body.rtl{
                             & .gfield{
                                 padding: 0 !important;
                                 max-width: 100% !important;
+                                & .select2-container{
+                                    
+                                    
+                                    & .select2-selection--single{
+                                    //   outline: 0;
+                                    //   background-color: transparent;
+                                        // border: 1px solid $black3;
+                                        // text-indent: 1rem;
+                                        // font-weight: 500;
+                                        // color: $black3;
+                                        letter-spacing: 0px;
+                                        // font-size: 18px !important;
+                                        // padding-right: 0.2rem;
+                                        &:focus{
+                                            border-color: $lightBlue;
+                                            border-width: 2px;
+                                        }
+                                       
+                                        @media (max-width: 1023px) {
+                                            font-size: 14px !important;
+                                            letter-spacing: 0px;
+                                        }
+                                        @media (min-width: 1024px) and (max-width: 1250px) {
+                                            font-size: 15px !important;
+                                        }
+                                      & .select2-selection__rendered{
+                                        
+                                        letter-spacing: 0px;
+                                      }
+                          
+                                      & .select2-selection__arrow{
+                                        & b{
+                                          border: none;
+                                          margin: 0;
+                                          left: 50px;
+                                          top: 55%;
+                                          color: $black3;
+                                        }
+                                        & b::after{
+                                          content: '\e800';
+                                          font-family: 'fontello';
+                                          color: $black3;
+                                        }
+                                      }
+                                    //   &[aria-expanded="true"]{
+                                    //     & .select2-selection__arrow{
+                                    //     //   position: static;
+                                    //       & b::after{
+                                    //         content: '\e803';
+                                    //         transform: rotate(180deg);
+                                    //         font-family: 'fontello';
+                                    //         color: $black3;
+                                    //       }
+                                    //     }
+                                    //   }
+                                    }
+                                    
+                                  }
                                 & select{
                                     background-position: left 1rem center;
                                 }

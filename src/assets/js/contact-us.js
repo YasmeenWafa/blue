@@ -9,3 +9,10 @@ $(document).bind('gform_confirmation_loaded', function(){
     $('.form-container .form-title').css('display',"none");
     $('.form-container .submit-form').css('display','none');
 });
+
+$(document).ready(function(){
+    $(document).on('gform_post_render', function(event, formId){
+          $('.contact-us-form .gfield select').select2()
+    
+    });
+  })

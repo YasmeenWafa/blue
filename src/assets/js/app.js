@@ -8,7 +8,8 @@ import Foundation from 'foundation-sites';
 // If you want to pick and choose which modules to include, comment out the above and uncomment
 // the line below
 //import './lib/foundation-explicit-pieces';
-
+// var select2 = require("select2");
+import 'select2';
 import './navigation';
 import './home';
 import './about';

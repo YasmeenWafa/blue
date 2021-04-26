@@ -186,6 +186,84 @@
                             & label{
                                 display: none;
                             }
+                            & .select2-container{
+                                width: 100% !important;
+                                height: 56px;
+                                &:focus{
+                                    // border-color: $lightBlue;
+                                    // border-width: 2px;
+                                    // outline: 1px solid $lightBlue;
+                                    // outline: 0;
+                                }
+                                & .selection{
+                                    margin-bottom: 0;
+                                    height: 100%;
+                                }
+                                & .select2-selection--single{
+                                
+                                    border: 1px solid $black3;
+                                    text-indent: 1rem;
+                                    font-weight: 500;
+                                    color: $black3;
+                                    letter-spacing: 0.8px;
+                                    font-size: 18px !important;
+                                    border-radius: 0;
+                                    height: 100%;
+                                    display: flex;
+                                    justify-content:space-between;
+                                    align-items: center;
+                                    padding-right: 0.2rem;
+                                    &:focus{
+                                        
+                                        border-color: $lightBlue;
+                                        border-width: 2px;
+                                        outline: 1px solid $lightBlue;
+                                        outline: 0;
+                                    }
+                                    @media (max-width: 1023px) {
+                                        font-size: 14px !important;
+                                        letter-spacing: 0.5px;
+                                    }
+                                    @media (min-width: 1024px) and (max-width: 1250px) {
+                                        font-size: 15px !important;
+                                    }
+                                  & .select2-selection__rendered{
+                                   
+                                    height: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    letter-spacing: 0.8px;
+                                    margin: 0;
+                                  }
+                      
+                                  & .select2-selection__arrow{
+                                    & b{
+                                      border: none;
+                                      margin: 0;
+                                      left: -25px;
+                                      top: 55%;
+                                      color: $black3;
+                                    }
+                                    & b::after{
+                                      content: '\e800';
+                                      font-family: 'fontello';
+                                      color: $black3;
+                                    }
+                                  }
+                                  &[aria-expanded="true"]{
+                                    & .select2-selection__arrow{
+                                      & b::after{
+                                        content: '\e803';
+                                        transform: rotate(180deg);
+                                        font-family: 'fontello';
+                                        color: $black3;
+                                      }
+                                    }
+                                  }
+                                }
+                                
+                              }
+
                             & input, select{
                                 width: 100% !important;
                                 border: 1px solid $black3;
@@ -204,6 +282,7 @@
                                 }
                             }
                             & select{
+                                display: none;
                                 background-position: right 1rem center;
                                 height: 56px;
                                 background-image: url('../../assets/images/down-arrow.svg');
@@ -235,6 +314,10 @@
                                         font-size: 15px !important;
                                     }
                                 }
+                                &:focus{
+                                    border-color: $lightBlue;
+                                    border-width: 2px;
+                                }
                             }
                         }
                         & .gfield_error{
@@ -262,6 +345,9 @@
                     color: $lightBlue;
                     cursor: pointer;
                     margin-top: -30px;
+                    &:focus{
+                        outline: 1px solid;
+                    }
                     &::before{
                         background-color: $lightBlue;
                     }
@@ -277,3 +363,43 @@
         }
     }
 }
+
+.select2-dropdown{
+    overflow: hidden !important;
+    // border-color: $black3;
+    border-color: $lightBlue;
+    border-width: 2px;
+    border-radius: 0;
+  }
+
+.select2-results{
+    // background-color: #d8d8d8;
+    color: $black3;
+    // font-family: CB;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    & .select2-results__option {
+      // padding: 1rem;
+      border-bottom: 1px solid $lightBlue;
+      // margin: 1rem;
+      margin: 0.5rem 1rem;
+    }
+    & .select2-results__option--selected{
+        background-color: $lightBlue;
+        color: $white2;
+    }
+    & .select2-results__option--highlighted.select2-results__option--selectable.select2-results__option--selected{
+        background-color: $lightBlue;
+        color: $white2;
+    }
+    & .select2-results__option--highlighted.select2-results__option--selectable{
+        background-color: $white2;
+        color: $black3;
+    }
+    & .select2-results__options{
+      overflow-x: hidden !important;
+    }
+  }
+   .select2-search--dropdown{
+    display: none !important;
+  }
