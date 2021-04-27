@@ -23,6 +23,3 @@ menu_items.on('click', function(){
 })
 
 
-$(document).ready(function() {
-  $('.contact-us-form .gfield select').select2()
-});
