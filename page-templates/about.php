@@ -35,14 +35,20 @@ get_header(); ?>
 
     <div class="about-blue-lower">
         <div class="about-blue-lower-text">
-            <div class="about-blue-lower-paragraph paragraph1 animatedText">
-                <h4><?php the_field('about_blue_lower_paragraph_1_title')?></h4>
-                <p><?php the_field('about_blue_lower_paragraph_1')?></p>
-            </div>
-            <div class="about-blue-lower-paragraph paragraph2 animatedText ">
-                <h4><?php the_field('about_blue_lower_paragraph_2_title')?></h4>
-                <p><?php the_field('about_blue_lower_paragraph_2')?></p>
-            </div>
+
+            <?php if(get_field('about_blue_lower_paragraph_1')):?>
+                <div class="about-blue-lower-paragraph paragraph1 animatedText">
+                    <h4><?php the_field('about_blue_lower_paragraph_1_title')?></h4>
+                    <p><?php the_field('about_blue_lower_paragraph_1')?></p>
+                </div>
+            <?php endif;?>
+
+            <?php if(get_field('about_blue_lower_paragraph_2')):?>
+                <div class="about-blue-lower-paragraph paragraph1 animatedText">
+                    <h4><?php the_field('about_blue_lower_paragraph_2_title')?></h4>
+                    <p><?php the_field('about_blue_lower_paragraph_2')?></p>
+                </div>
+            <?php endif;?>
         </div>
         <div class="about-blue-lower-images">
             <?php if(have_rows('slider_images')): ?>

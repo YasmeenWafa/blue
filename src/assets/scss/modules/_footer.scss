@@ -375,7 +375,8 @@
   // max-width: 75rem;
   max-width: 1280px;
   // padding: 60px 100px;
-  padding: 60px 70px;
+  // padding: 60px 70px;
+  padding: 30px 70px;
   display: flex;
   flex-direction: column;
   // justify-content: space-between;
@@ -387,10 +388,10 @@
   }
   @media (min-width: 1024px) and (max-width: 1101px) {
     // padding: 60px 40px;
-    padding: 60px 25px;
+    padding: 30px 25px;
   }
   @media (min-width: 1102px) and (max-width: 1300px) {
-    padding: 60px 70px;
+    padding: 30px 70px;
   }
   @media (max-width: 1023px) {
     padding: 48px;
@@ -408,7 +409,8 @@
   }
 }
 .footer-upper{
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
+  margin-bottom: 40px;
   @media (max-width: 1023px) {
    margin: 0;
   }
@@ -453,6 +455,9 @@
         color: $black2;
       }
       .sub-menu{
+        & .menu-item.phone a{
+          direction: ltr;
+        }
         .menu-item a{
           font-size: 14px;
           font-weight: 300;
@@ -502,6 +507,7 @@
           color: $black2;
           line-height: 20px;
           max-width: 150px;
+          padding: 0.3rem 1rem;
         }
       }
     }
@@ -518,8 +524,10 @@
       }
       & h2{
         max-width: 185px;
-        font-size: 32px;
-        line-height: 48px;
+        // font-size: 32px;
+        font-size: 24px;
+        // line-height: 48px;
+        line-height: 32px;
         color: $black2;
         margin-bottom: 24px;
         @media (max-width: 1023px) {
