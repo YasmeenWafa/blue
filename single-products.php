@@ -34,9 +34,29 @@ get_header(); ?>
 	
 	<a href="<?php echo esc_url( home_url( '/products' ) ); ?>" class="go-back"> <i class="icon-left-open-big"></i><?php _e('Go Back','products')?></a>
 
-	<div class="product-featured-image section-image" >
-		<div class="overlay"></div>
-		<img  class="" src="<?php the_post_thumbnail_url( 'large' ); ?>" alt="">
+	<div class="product-featured-images" >
+		<!-- <div class="overlay"></div>
+		<img  class="" src="<?php the_post_thumbnail_url( 'large' ); ?>" alt=""> -->
+
+            <?php if(have_rows('product_images')): ?>
+                <div class="slider-for">
+                    <?php while(have_rows('product_images')): the_row();?>
+                        <a class="pslide" href="<?php the_sub_field('image');?>" 
+                        style="background-image: url(<?php  the_sub_field('image')?>);"
+                        >
+                            <div class="zoom-icon">
+                                <img src="<?php echo get_stylesheet_directory_uri()?>/src/assets/images/zoom-in.svg" alt="">
+                            </div>
+                        </a>
+                    <?php endwhile;?>
+                </div>
+                <div class="slider-nav">
+                    <?php while(have_rows('product_images')): the_row();?>
+                        <div class="slide" style="background-image: url(<?php the_sub_field('image')?>);">
+                        </div>
+                    <?php endwhile;?>
+                </div>
+            <?php endif;?>
 	</div>
 	<div class="product-content">
 		<div class="product-description">

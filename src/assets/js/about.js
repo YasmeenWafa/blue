@@ -32,7 +32,7 @@ $('.slider-for').slick({
   
   // fancybox
   $().fancybox({
-    selector : '.about-blue-lower-images .slider-for .slick-slide .pslide',
+    selector : '.slider-for .slick-slide .pslide',
     buttons: [
       "zoom",
       //"share",
@@ -48,7 +48,7 @@ $('.slider-for').slick({
   });
 
 
-const calcHeights = () =>{
+const calcHeights = () => {
   let width = $('.about-blue-lower-images .slider-for .slick-slide').width();
   let height =  (width / 1.068282528);
   $('.about-blue-lower-images .slider-for').css('height',height)
@@ -56,6 +56,14 @@ const calcHeights = () =>{
   let width2 = $('.about-blue-lower-images .slider-nav .slick-slide').width()
   let height2 = width2;
   $('.about-blue-lower-images .slider-nav').css('height',height2);
+
+  let productSliderForWidth = $('.product-featured-images .slider-for .slick-slide').width();
+  let productSliderForHeight = (productSliderForWidth / 1.5044586)
+  $('.product-featured-images .slider-for').css('height', productSliderForHeight)
+
+  let productSliderNavWidth = $('.product-featured-images .slider-nav .slick-slide').width()
+  let productSliderNavHeight = productSliderNavWidth;
+  $('.product-featured-images .slider-nav').css('height',productSliderNavHeight);
 }
 
 calcHeights();

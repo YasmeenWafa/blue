@@ -57,7 +57,6 @@ get_header(); ?>
                         <a class="pslide" href="<?php the_sub_field('image');?>" 
                         style="background-image: url(<?php  the_sub_field('image')?>);"
                         >
-                            <!-- <img src="<?php the_sub_field('image')?>" alt=""> -->
                             <div class="zoom-icon">
                                 <img src="<?php echo get_stylesheet_directory_uri()?>/src/assets/images/zoom-in.svg" alt="">
                             </div>
@@ -67,7 +66,6 @@ get_header(); ?>
                 <div class="slider-nav">
                     <?php while(have_rows('slider_images')): the_row();?>
                         <div class="slide" style="background-image: url(<?php the_sub_field('image')?>);">
-                            <!-- <img src="<?php the_sub_field('image')?>" alt=""> -->
                         </div>
                     <?php endwhile;?>
                 </div>
