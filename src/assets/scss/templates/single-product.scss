@@ -174,10 +174,15 @@
             }
         }
         & .slider-nav{
+            margin: 0 auto;
             margin-top: 35px;
-            padding:  0 200px;
+            // padding:  0 250px;
+            width: 50%;
+
             @media (max-width:1023px) {
-                padding: 0 30px;
+                // padding: 0 30px;
+                width: 80%;
+                margin-top: 20px;
             }
             & .slick-track, & .slick-list, & .slick-slide div, & .slide{
                 height: 100%;
