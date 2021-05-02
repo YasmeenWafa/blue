@@ -189,12 +189,6 @@
                             & .select2-container{
                                 width: 100% !important;
                                 height: 56px;
-                                &:focus{
-                                    // border-color: $lightBlue;
-                                    // border-width: 2px;
-                                    // outline: 1px solid $lightBlue;
-                                    // outline: 0;
-                                }
                                 & .selection{
                                     margin-bottom: 0;
                                     height: 100%;
@@ -324,8 +318,22 @@
                             background-color: transparent;
                             padding: 0;
                             border: none;
+                            & .select2-container{
+                                & .select2-selection--single{
+                                    &:focus{
+                                        border-color: $lightBlue;
+                                        border-width: 2px;
+                                        outline: 1px solid $lightBlue;
+                                        outline: 0;   
+                                    }
+                                }
+                            }
                             & input{
                                 border-color: $black3 !important;
+                                &:focus{
+                                    border-color: $lightBlue !important;
+                                    border-width: 2px !important;
+                                }
                             }
                         }
                     }

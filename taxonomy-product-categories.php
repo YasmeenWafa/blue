@@ -85,13 +85,15 @@ get_header(); ?>
 					<?php foreach( $products as $product):?>
 
 					<div class="tabs-panel <?php if ($productIndex == 0) { echo 'is-active'; }?>" id="cat<?php echo $catIndex;?>product<?php echo $productIndex;?>">
-						<?php $product_variations = get_field('product_variations', $product->ID);?>
+						<?php $product_variations = get_field('product_variations', $product->ID);
+							$product_images = get_field('product_images', $product->ID);
+						?>
 
 						<div class="product-content">
 							<h2 class="product-title animatedText"><?php echo $product->post_title;?></h2>
 							<div class="product-description animatedText"><?php echo $product->post_content;?></div>
 							
-							<?php if ($product_variations) :?>
+							<?php if ($product_images) :?>
 								<a class="cta-button animatedText" href="<?php echo get_permalink( $product->ID); ?>"><span><?php _e('Know More', 'products');?></span></a>
 							<?php else:?>
 								<a class="cta-button animatedText" href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>"><span><?php _e('Contact Us', 'products');?></span></a>
