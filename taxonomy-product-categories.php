@@ -93,11 +93,11 @@ get_header(); ?>
 							<h2 class="product-title animatedText"><?php echo $product->post_title;?></h2>
 							<div class="product-description animatedText"><?php echo $product->post_content;?></div>
 							
-							<?php if ($product_images) :?>
+							<?php //if ($product_images) :?>
 								<a class="cta-button animatedText" href="<?php echo get_permalink( $product->ID); ?>"><span><?php _e('Know More', 'products');?></span></a>
-							<?php else:?>
-								<a class="cta-button animatedText" href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>"><span><?php _e('Contact Us', 'products');?></span></a>
-							<?php endif;?>
+							<?php //else:?>
+								<!-- <a class="cta-button animatedText" href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>"><span><?php _e('Contact Us', 'products');?></span></a> -->
+							<?php //endif;?>
 
 						</div>
 						<div class="product-image section-image" 
